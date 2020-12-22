@@ -1,7 +1,7 @@
 from sys import setrecursionlimit
 
 
-#  Index based Implementation << Note
+# Index based Implementation << Note
 # Here only printing, for storing we can pass a list and in the base case, append the output string into that list
 def print_keypad_combinations(keypad, output, index) -> None:
     if index >= len(keypad):
