@@ -15,7 +15,7 @@ def get_unique_subsets(input: list, output: str, unique_subsets: set, index: int
     get_unique_subsets(input, output_when_did_not_choose, unique_subsets, index + 1)
 
 
-def get_all_unique_subsets(data) -> set:
+def get_all_unique_string_subsets(data) -> set:
     unique_subsets = set()
     get_unique_subsets(data, "", unique_subsets, 0)  # Choosing Output to be Empty String  NOTE
     return unique_subsets
@@ -23,6 +23,8 @@ def get_all_unique_subsets(data) -> set:
 
 if __name__ == "__main__":
     # data = [1, 2, 3]  # a list
+    # data = [15, 20, 12]  # a list --> it works the the results, do not have the elements separated Notice, it's output
+
     # data = "abc"  # a string
     data = "aab"  # a string - having duplicates - Note : It Handles duplicates
-    print(get_all_unique_subsets(data))
+    print(get_all_unique_string_subsets(data))

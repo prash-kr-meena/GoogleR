@@ -1,6 +1,11 @@
 from typing import List
 
 
+# input an list of space-separated integers <array>
+def input_array() -> list:
+    return list(map(int, input().strip().split(" ")))
+
+
 # If you don't want space at the end of it
 def print_array(arr: List) -> None:
     list_of_string = list(map(str, arr))
@@ -15,6 +20,6 @@ def print_array_by_traversing(arr: List) -> None:
 
 
 if __name__ == "__main__":
-    arr = [1, 2, 3, 4]
-    print_array(arr)
-    print_array_by_traversing(arr)
+    array = [1, 2, 3, 4]
+    print_array(array)
+    print_array_by_traversing(array)

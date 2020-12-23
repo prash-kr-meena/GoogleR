@@ -31,7 +31,7 @@ def get_subsets(all_subsets: list, input: list, output: str, index: int) -> None
     get_subsets(all_subsets, input, output_when_did_not_choose, index + 1)
 
 
-def get_all_subsets(data) -> list:
+def get_all_string_subsets(data) -> list:
     all_subsets = []
     get_subsets(all_subsets, data, "", 0)  # Choosing Output to be Empty String  NOTE
     return all_subsets
@@ -39,7 +39,8 @@ def get_all_subsets(data) -> list:
 
 if __name__ == "__main__":
     setrecursionlimit(11000)
-    # data = [1, 2, 3]  # a list
+    data = [15, 20, 12]  # a list --> it works the the results, do not have the elements separated Notice, it's output
+
     # data = "abc"  # a string
-    data = "aab"  # a string - having duplicates - Note : Doesn't Handle
-    print(get_all_subsets(data))
+    # data = "aab"  # a string - having duplicates - Note : Doesn't Handle
+    print(get_all_string_subsets(data))

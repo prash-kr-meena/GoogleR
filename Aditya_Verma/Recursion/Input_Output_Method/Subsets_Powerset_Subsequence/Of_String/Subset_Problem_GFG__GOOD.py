@@ -10,7 +10,7 @@ def get_unique_subset(input, output, all_subsets, index):
         return
 
     output_when_did_not_choose = output
-    output_when_chosen = output + (input[index],)  # creating another tuple to concatinate with
+    output_when_chosen = output + (input[index],)  # creating another tuple to concatenate with
 
     get_unique_subset(input, output_when_chosen, all_subsets, index + 1)
     get_unique_subset(input, output_when_did_not_choose, all_subsets, index + 1)
@@ -21,6 +21,7 @@ def print_in_required_for(all_subset_list):
     for subset in all_subset_list:
         final_output.append('(')
         for index, element in enumerate(subset):
+
             final_output.append(str(element))
             if index != len(subset) - 1:
                 final_output.append(' ')
