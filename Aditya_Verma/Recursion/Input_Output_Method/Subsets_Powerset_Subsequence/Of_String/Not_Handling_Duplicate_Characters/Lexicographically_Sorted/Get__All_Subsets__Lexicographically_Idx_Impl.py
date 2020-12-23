@@ -2,7 +2,7 @@ from Aditya_Verma.Recursion.Input_Output_Method.Subsets_Powerset_Subsequence.Of_
     get_all_string_subsets
 
 
-def get_all_lexicographically_sorted_string_subsets():
+def get_all_lexicographically_sorted_string_subsets(data):
     subsets = get_all_string_subsets(data)
 
     print(type(subsets))  # we can't directly sort a set, we first need a list to sort

@@ -32,7 +32,8 @@ class Solution:
 
     # Time  : O(string_len)
     # Space : O(string_size)    at each recursion level it is, being created and destroyed
-    def convert(self, say):
+    @staticmethod
+    def convert(say):
         characters = []
 
         prev_char = say[0]

@@ -1,7 +1,10 @@
-# Too Brute Force
-# Time : O(n2)      -> Just literally travelling through the matrix  --> Quadratic
-# Space : O(1)
-from Final450.Searching_Sorting._Named_Algorithms.binary_search_iterative import binary_search
+from Final450.Searching_Sorting.Algorithms.Binary_Search_Iterative import binary_search
+
+"""
+Too Brute Force
+Time : O(n2)      -> Just literally travelling through the matrix  --> Quadratic
+Space : O(1)
+"""
 
 
 def search__brute_force_quadratic(A, target):

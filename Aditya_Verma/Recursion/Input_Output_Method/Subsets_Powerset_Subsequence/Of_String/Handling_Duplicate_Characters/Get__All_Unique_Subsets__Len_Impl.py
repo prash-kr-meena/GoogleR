@@ -27,6 +27,6 @@ if __name__ == "__main__":
     # data = [1, 2, 3]  # a list
     # data = [15, 20, 12]  # a list --> it works the the results, do not have the elements separated Notice, it's output
 
-    # data = "abc"  # a string
+    data = "abc"  # a string
     # data = "aab"  # a string - having duplicates - Note : It Handles duplicates
     print(get_all_unique_string_subsets(data))

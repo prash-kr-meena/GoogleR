@@ -1,11 +1,13 @@
-from Final450.Array._Named_Algorithms.quick_select import quick_select
+from Final450.Searching_Sorting.Algorithms.Quick_Select import quick_select
+
+"""
+Average Case Time : O(n)      --> Using randomized partitioning, in our QuickSelect implementation
+Worst case : O(n2)
+
+here, k is 1_indexed
+"""
 
 
-# Average Case Time : O(n)      --> Using randomized partitioning, in our QuickSelect implementation
-# Worst case : O(n2)
-
-
-# here, k is 1_indexed
 def kth_smallest__quick_select(A, k):
     return quick_select(A, left=0, right=len(A) - 1, k=k - 1)
     # But QuickSelect Method takes k as 0_indexed

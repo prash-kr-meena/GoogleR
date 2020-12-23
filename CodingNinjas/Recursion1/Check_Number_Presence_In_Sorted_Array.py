@@ -1,6 +1,6 @@
 from sys import setrecursionlimit
 
-from Final450.Searching_Sorting._Named_Algorithms.binary_search_recursive import binary_search_recursive
+from Final450.Searching_Sorting.Algorithms.Binary_Search_Recursive import binary_search_recursive
 
 '''
 Basically implementing Binary Search using recursion, as array is guaranteed to be sorted

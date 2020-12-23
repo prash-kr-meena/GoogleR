@@ -27,7 +27,7 @@ def get_letter_case_permutations(permutations: List[str], input, output="", inde
 
 class Solution:
 
-    def letterCasePermutation(self, string: str) -> List[str]:
+    def letter_case_permutation(self, string: str) -> List[str]:
         all_permutations = []  # it will be, list of string
         get_letter_case_permutations(all_permutations, string)
         return all_permutations
@@ -35,7 +35,7 @@ class Solution:
 
 if __name__ == "__main__":
     solution = Solution()
-    print(solution.letterCasePermutation("a1b2"))
-    print(solution.letterCasePermutation("3z4"))
-    print(solution.letterCasePermutation("12345"))
-    print(solution.letterCasePermutation("0"))
+    print(solution.letter_case_permutation("a1b2"))
+    print(solution.letter_case_permutation("3z4"))
+    print(solution.letter_case_permutation("12345"))
+    print(solution.letter_case_permutation("0"))

@@ -1,4 +1,4 @@
-from Aditya_Verma.Dynamic_Programming.Type1__01Knapsack.Subset_Sum.Subset_Sum__Recursion__Idx_impl_backward import \
+from Aditya_Verma.Dynamic_Programming.Type1__01Knapsack.Subset_Sum.Subset_Sum__Recursion__Idx_Impl_Backward import \
     solve_subsetsum
 
 

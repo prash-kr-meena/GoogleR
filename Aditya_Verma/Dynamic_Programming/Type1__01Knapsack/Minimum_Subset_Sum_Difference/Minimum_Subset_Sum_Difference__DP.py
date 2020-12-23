@@ -1,4 +1,4 @@
-from Aditya_Verma.Dynamic_Programming.Type1__01Knapsack.Subset_Sum.Subset_Sum__DP__backward__return_table import \
+from Aditya_Verma.Dynamic_Programming.Type1__01Knapsack.Subset_Sum.Subset_Sum__DP__Backward__Return_Table import \
     subset_sum__table
 
 

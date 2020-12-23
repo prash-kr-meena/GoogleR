@@ -40,7 +40,8 @@ def get_balanced_parentheses(available_open_brackets, available_close_brackets, 
 class Solution:
     # @param A : integer
     # @return a list of strings
-    def generateParenthesis(self, n):
+    @staticmethod
+    def generate_parenthesis(n):
         available_open_brackets = n
         available_close_brackets = n
         all_balanced_parentheses = []
@@ -50,8 +51,8 @@ class Solution:
 
 if __name__ == "__main__":
     s = Solution()
-    print(s.generateParenthesis(0))
-    print(s.generateParenthesis(1))
-    print(s.generateParenthesis(2))
-    print(s.generateParenthesis(3))
-    print(s.generateParenthesis(4))
+    print(s.generate_parenthesis(0))
+    print(s.generate_parenthesis(1))
+    print(s.generate_parenthesis(2))
+    print(s.generate_parenthesis(3))
+    print(s.generate_parenthesis(4))

@@ -38,7 +38,6 @@ a_list.append(200)
 # a_list.append(300, 500)           # No    -> Error
 print(a_list)
 
-
 # Going in reverse with range
 print(list(range(0, 10, -1)))
 print(list(range(10, 0, -1)))

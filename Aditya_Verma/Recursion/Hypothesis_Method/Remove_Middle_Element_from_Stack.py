@@ -2,12 +2,12 @@ from Abstract_Data_Types.StackADT import StackADT
 from Aditya_Verma.Recursion.Hypothesis_Method.Remove_Kth_Element_from_Stack import remove_kth_element_from_top_of_stack
 
 
-def remove_middle_element_of_stack(stack) -> int:
+def remove_middle_element_of_stack(stack) -> None:
     middle = (stack.size() // 2) + 1
 
     s.print()  # Not Removed
     removed_element = remove_kth_element_from_top_of_stack(stack, middle)
-    print(removed_element, " < Removed")
+    print(removed_element, " < Removed")  # You can return removed element if you want Notice
     s.print()  # Kth element Removed
 
 

@@ -29,5 +29,5 @@ def subset_sum(nums, sum) -> bool:
 
 
 if __name__ == "__main__":
-    print(subset_sum([3, 34, 4, 12, 5, 2]))
-    print(subset_sum([3, 34, 4, 12, 5, 2]))
+    print(subset_sum([3, 34, 4, 12, 5, 2], 4))
+    print(subset_sum([3, 34, 4, 12, 5, 2], 1))

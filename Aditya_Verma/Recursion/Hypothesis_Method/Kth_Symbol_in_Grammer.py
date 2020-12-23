@@ -39,7 +39,7 @@ def find_symbol_in_grammer__symmetry_approach(n, k) -> int:
 
 if __name__ == "__main__":
     # n, k = 1, 1
-    n, k = 2, 1
+    # n, k = 2, 1
     # n, k = 2, 2
     n, k = 4, 5
     print(find_symbol_in_grammer__even_odd_approach(n, k))

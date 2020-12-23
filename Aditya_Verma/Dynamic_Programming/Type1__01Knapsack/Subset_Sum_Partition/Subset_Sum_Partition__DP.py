@@ -1,4 +1,4 @@
-from Aditya_Verma.Dynamic_Programming.Type1__01Knapsack.Subset_Sum.Subset_Sum__DP__backward import subset_sum
+from Aditya_Verma.Dynamic_Programming.Type1__01Knapsack.Subset_Sum.Subset_Sum__DP__Backward import subset_sum
 
 
 # Note : exact same code, only module change
