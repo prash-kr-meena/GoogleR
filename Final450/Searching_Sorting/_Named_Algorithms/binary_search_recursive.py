@@ -1,8 +1,8 @@
 from sys import setrecursionlimit
 from sys import getrecursionlimit
 
-setrecursionlimit(11000)
-print("Updated Recursion1 Limit : ", getrecursionlimit())
+# setrecursionlimit(11000)
+# print("Updated Recursion1 Limit : ", getrecursionlimit())
 
 """
 Array has to be sorted **
@@ -30,10 +30,11 @@ def binary_search(A, key, left, right) -> int:
 
 
 def binary_search_recursive(nums, kay) -> int:
-    return binary_search(nums, kay, 0, len(nums))
+    return binary_search(nums, kay, 0, len(nums) - 1)
 
 
 if __name__ == "__main__":
+    setrecursionlimit(11000)
     arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     search_key = 6
     index = binary_search_recursive(arr, search_key)
@@ -43,7 +44,6 @@ if __name__ == "__main__":
 """
 arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 search_key = 6
-
 
 
 arr = [1, 2, 2, 2, 4, 5]        # 2 as duplicates
