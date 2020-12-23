@@ -19,13 +19,15 @@ print(bisect.bisect_right(sorted_elements, 'C'))
 sorted_elements = ['A', 'B', 'C', 'C', 'C', 'D']
 l = bisect.bisect_left(sorted_elements, 'C')
 r = bisect.bisect_right(sorted_elements, 'C')
-print(r - l)
+print(r - l)  # To get the total no of occurrences NOTE
 
 
-def find_index(elements, value):
+def find_index(elements, value) -> int:
     index = bisect.bisect_left(elements, value)
     if index < len(elements) and elements[index] == value:
         return index
+    # else:
+    #     return -1  # Item is not present there,
 
 
 sorted_elements = ['A', 'B', 'C', 'C', 'C', 'D']
