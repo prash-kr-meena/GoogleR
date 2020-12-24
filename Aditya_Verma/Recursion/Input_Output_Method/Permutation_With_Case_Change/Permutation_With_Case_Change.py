@@ -13,8 +13,6 @@ def print_permutations_with_case_change(input: str, output="", index=0):
     print_permutations_with_case_change(input, output_without_case_change, index + 1)
     print_permutations_with_case_change(input, output_with_case_change, index + 1)
 
-    pass
-
 
 if __name__ == "__main__":
     print_permutations_with_case_change("ab")

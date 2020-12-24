@@ -47,7 +47,6 @@ def merge_sort(A, left, right):
 
 def rearrange_via_modified_merge_sort(A):
     merge_sort(A, left=0, right=len(A) - 1)
-    pass
 
 
 if __name__ == "__main__":

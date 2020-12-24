@@ -23,9 +23,6 @@ def minimum_subset_sum_difference(nums, curr_index, A, B):
     return min(min_diff_with_A, min_diff_with_B)
 
 
-pass
-
-
 def solve(nums):
     if nums is None or len(nums) == 0:  # Edge case
         return float("inf")

@@ -35,8 +35,6 @@ def is_rotation_of_one_another__constant_space(A, B) -> bool:
     could take less time in some cases
     """
 
-    pass
-
 
 def is_rotation_of_one_another__substring_way(A, B):
     if len(A) != len(B):

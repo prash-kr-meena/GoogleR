@@ -3,7 +3,6 @@ def count_ways_to_achieve_target_sum(nums, sum, curr_index):
     if curr_index == len(nums) and sum == 0:  # we have reached last element and the sum has become 0
         # thi is correct base case
         return 1
-        pass
 
     if curr_index >= len(nums) and sum != 0:
         return 0
