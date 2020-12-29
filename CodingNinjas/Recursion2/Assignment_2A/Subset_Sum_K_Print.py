@@ -1,6 +1,6 @@
 from typing import List
 
-from Utils.Array import print_array
+from Utils.Array import print_array_inline
 
 """
 This, problem is extension over the subset problem (under input-output method),
@@ -16,7 +16,7 @@ We can't do Backward here, because of question requirements, we need to maintain
 def subset_sum_k(k: int, input: list, output: list, index: int) -> None:
     # Base Case 1
     if k == 0:
-        print_array(output)  # Directly printing it  Notice
+        print_array_inline(output)  # Directly printing it  Notice
         return
 
     # Base Case 2

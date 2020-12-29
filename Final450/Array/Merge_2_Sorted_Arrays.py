@@ -2,7 +2,7 @@
 Time : O(n+m)
 Space : O(n+m)
 """
-from Utils.Array import print_array
+from Utils.Array import print_array_inline
 
 
 def merge_2_sorted_arrays(A, B) -> list:
@@ -37,7 +37,7 @@ if __name__ == "__main__":
     arrB = [- 1, 0, 0, 1, 1, 8]
 
     arr = merge_2_sorted_arrays(arrA, arrB)
-    print_array(arr)
+    print_array_inline(arr)
 """
 arrA = [1, 3, 5, 7, 9]
 arrB = [0, 2, 4, 6, 8]

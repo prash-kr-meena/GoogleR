@@ -1,7 +1,7 @@
 from sys import setrecursionlimit
 from typing import List
 
-from Utils.Array import print_array
+from Utils.Array import print_array_inline
 
 '''
 Here traversing from front or end both are acceptable as in either case we need to travel the whole array,
@@ -61,8 +61,8 @@ if __name__ == "__main__":
     arr = list(int(i) for i in input().strip().split(' '))
     x = int(input())
 
-    print_array(find_index_of_all_occurrence__forward(arr, x))
-    print_array(find_index_of_all_occurrence__backward(arr, x))
+    print_array_inline(find_index_of_all_occurrence__forward(arr, x))
+    print_array_inline(find_index_of_all_occurrence__backward(arr, x))
 
 '''
 4
