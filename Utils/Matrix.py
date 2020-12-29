@@ -7,6 +7,13 @@ def print_matrix(matrix):
         print(row)
 
 
+def print_matrix_beautiful(matrix):
+    for row in matrix:
+        for e in row:
+            print(e, end=" ")
+        print()
+
+
 if __name__ == "__main__":
     print_matrix(get_filled_matrix(3, 10, 8))
 
@@ -16,3 +23,4 @@ if __name__ == "__main__":
              [36, 78, 87, 94]]
 
     print_matrix(arr2D)
+    print_matrix_beautiful(arr2D)
