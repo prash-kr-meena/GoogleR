@@ -32,14 +32,14 @@ def get_subsets(all_subsets: list, input: list, output: str, index: int) -> None
 
 def get_all_list_subsets(arr) -> list:
     all_subsets = []
-    get_subsets(all_subsets, arr, "", 0)  # Choosing Output to be Empty String  NOTE
+    get_subsets(all_subsets, arr, "", 0)  # Choosing Output to be Empty String  Notice
     return all_subsets
 
 
 if __name__ == "__main__":
     setrecursionlimit(11000)
 
-    data = [15, 20, 12]  # a list --> it works the the results, do not have the elements separated Notice, it's output
+    data = [15, 20, 12]  # a list --> the results, do have the elements separated Notice
     # data = []  # No Element
     # data = [12]  # Only one element
     # data = [99, 99]  # having duplicates - Note : Doesn't Handle

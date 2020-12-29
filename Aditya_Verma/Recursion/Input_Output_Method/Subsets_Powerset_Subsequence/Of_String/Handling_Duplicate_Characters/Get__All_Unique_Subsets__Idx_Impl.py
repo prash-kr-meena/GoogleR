@@ -1,30 +1,36 @@
-# Note : Index base implementation
-# Here for shortening the input size, we use index
+from sys import setrecursionlimit
 
-# This can work with both string and substring
-# String will automatically be converted into list_of_char
-def get_unique_subsets(input: list, output: str, unique_subsets: set, index: int) -> None:
+"""
+Note : Index base implementation
+Here for shortening the input size, we use index
+"""
+
+
+def get_unique_subsets(unique_subsets: set, input: list, output: str, index: int) -> None:
     if index >= len(input):
-        unique_subsets.add(output)  # Note : Ankh band kar ke add, as it will handle duplicity automatically
+        unique_subsets.add(output)  # Ankh band kar ke add, as it will handle duplicity automatically Note
         return
 
     output_when_chosen = output  # same as the parent Recursive Nodes output
     output_when_did_not_choose = output + str(input[index])
 
-    get_unique_subsets(input, output_when_chosen, unique_subsets, index + 1)
-    get_unique_subsets(input, output_when_did_not_choose, unique_subsets, index + 1)
+    get_unique_subsets(unique_subsets, input, output_when_chosen, index + 1)
+    get_unique_subsets(unique_subsets, input, output_when_did_not_choose, index + 1)
 
 
-def get_all_unique_string_subsets(data) -> set:
+def get_all_unique_string_subsets(string) -> set:
     unique_subsets = set()
-    get_unique_subsets(data, "", unique_subsets, 0)  # Choosing Output to be Empty String  NOTE
+    get_unique_subsets(unique_subsets, string, "", 0)  # Choosing Output to be Empty String  NOTE
     return unique_subsets
 
 
 if __name__ == "__main__":
-    # data = [1, 2, 3]  # a list
-    # data = [15, 20, 12]  # a list --> it works the the results, do not have the elements separated Notice, it's output
+    setrecursionlimit(11000)
+    data = [15, 20, 12]  # a list --> The results, do not have the elements separated Notice
+    # data = []  # No Element
+    # data = [12]  # Only one element
+    # data = [99, 99]  # having duplicates - Note : Handles Duplicate
 
     # data = "abc"  # a string
-    data = "aab"  # a string - having duplicates - Note : It Handles duplicates
+    # data = "aab"  # a string - having duplicates - Note : It Handles duplicates
     print(get_all_unique_string_subsets(data))
