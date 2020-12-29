@@ -1,3 +1,5 @@
+from sys import setrecursionlimit
+
 from Aditya_Verma.Recursion.Input_Output_Method.Subsets_Powerset_Subsequence.Of_String.Not_Handling_Duplicate_Characters.Get__All_Subsets__Idx_Impl import \
     get_all_string_subsets
 
@@ -14,9 +16,10 @@ def get_all_lexicographically_sorted_string_subsets(data):
 
 
 if __name__ == "__main__":
-    data = [15, 20, 12]  # a list --> it works the the results, do not have the elements separated Notice, it's output
+    setrecursionlimit(11000)
+    # data = [15, 20, 12]  # a list --> the results, do not have the elements separated Notice
 
     # data = "abc"  # a string
-    # data = "aab"  # a string - having duplicates - Note : Doesn't Handle
-
+    # data = ""  # a string
+    data = "aaa"  # a string - having duplicates - Note : Does not Handle duplicates
     get_all_lexicographically_sorted_string_subsets(data)
