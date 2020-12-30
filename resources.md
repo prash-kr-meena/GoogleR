@@ -21,3 +21,9 @@
            <br> `[i for i in old_list]`
 * [Convert int to ASCII and back in Python](https://stackoverflow.com/questions/3673428/convert-int-to-ascii-and-back-in-python)
   -> [Top Answer](https://stackoverflow.com/a/3673447)
+* [Error: RuntimeError: Set changed size during iteration](https://discover.cs.ucsb.edu/commonerrors/error/1008.xml)
+* [Method Chaining In Python](https://www.tutorialspoint.com/Explain-Python-class-method-chaining) `Method_Chaining.py`
+* [Ways to remove i’th character from string in Python](https://www.geeksforgeeks.org/ways-to-remove-ith-character-from-string-in-python/)
+    - Naive
+    - String Slicing + Concatenation ✅
+    - `str.join()` & list comprehension
