@@ -39,3 +39,4 @@ I am little confused will see -> Once Aditya teaches this topic - For now what i
     - Naive
     - String Slicing + Concatenation ✅
     - `str.join()` & list comprehension
+* [Enumerate in python - Programiz](https://www.programiz.com/python-programming/methods/built-in/enumerate)
