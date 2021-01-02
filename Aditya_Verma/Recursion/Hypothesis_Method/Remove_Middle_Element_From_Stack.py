@@ -1,5 +1,5 @@
 from Abstract_Data_Types.StackADT import StackADT
-from Aditya_Verma.Recursion.Hypothesis_Method.Remove_Kth_Element_from_Stack import remove_kth_element_from_top_of_stack
+from Aditya_Verma.Recursion.Hypothesis_Method.Remove_Kth_Element_From_Stack import remove_kth_element_from_top_of_stack
 
 
 def remove_middle_element_of_stack(stack) -> None:

@@ -6,7 +6,6 @@
 from Abstract_Data_Types.StackADT import StackADT
 
 
-# returns a stack ie, deque
 def insert_into_sorted_stack(stack, element) -> None:
     # Edge case
     if stack is None:
@@ -18,8 +17,10 @@ def insert_into_sorted_stack(stack, element) -> None:
         return
 
     top_element = stack.pop()
-    insert_into_sorted_stack(stack, element)
+    insert_into_sorted_stack(stack, element)  # Hypothesis
     stack.push(top_element)
+
+    # No induction Step
 
 
 def sort_stack(stack) -> None:
