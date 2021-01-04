@@ -1,23 +1,19 @@
-from typing import List
-
 """
-NGR     |     Nearest Greater to right     |     Next Largest Element (GfG)
+NGL  |  Nearest Greater to left
 """
 
 
-# Brute Force Solution
-# O(n2) Time
-# O(1) Space
-def ngr_brute_force(nums) -> List[int]:
+def ngl_brute_force(nums):
     print("Brute Force Solution : ")
     length = len(nums)
-    result = [-1] * len(nums)  # Initializing all with -1 already
+    result = [-1] * length
 
     for i in range(0, length):
-        for j in range(i + 1, length):  # j depends on i
-            if nums[j] > nums[i]:  # First element that we found greater, is our next greater
+        for j in range(i - 1, -1, -1):  # from i-1 to 0     in reverse
+            if nums[j] > nums[i]:  # First greater element, we could find in the left array
                 result[i] = nums[j]
-                break  # Important, as we don't want to look more, once we find first element
+                break
+
     print(nums)
     print(result)
     return result
@@ -27,25 +23,24 @@ def ngr_brute_force(nums) -> List[int]:
 # Optimized stack solution
 # O(n) Time
 # O(n) Space
-def next_greatest_element_to_right(nums):
-    print("Optimized Stack Solution : ")
+def nearest_greater_to_left(nums):
+    print("\nOptimized Stack Solution : ")
     length = len(nums)
     result = [-1] * len(nums)  # Initializing all with -1 already
-
     stack = []  # Using list as stack
 
-    for i in range(length - 1, -1, -1):  # n-1 to 0 in reverse
+    for i in range(0, length):  # Only Change
         curr = nums[i]
 
         if len(stack) == 0:
-            result[i] = -1  # pushing -1
+            result[i] = -1
 
-        elif len(stack) != 0 and stack[-1] > curr:  # stack_top > curr element
+        elif len(stack) != 0 and stack[-1] > curr:
             result[i] = stack[-1]  # stack_top
 
-        elif len(stack) != 0 and stack[-1] <= curr:  # stack_top <= curr element
+        elif len(stack) != 0 and stack[-1] <= curr:
             while len(stack) != 0 and stack[-1] <= curr:
-                stack.pop()  # pop all elements smaller then equal to curr, unless the stack is empt
+                stack.pop()  # pop stack_top till they are smaller then current
 
             # By which of the above condition, the loop has ended
             if len(stack) == 0:
@@ -63,5 +58,9 @@ def next_greatest_element_to_right(nums):
 
 if __name__ == '__main__':
     arr = list(map(int, input().strip().split()))
-    ngr_brute_force(arr)
-    next_greatest_element_to_right(arr)
+    ngl_brute_force(arr)
+    nearest_greater_to_left(arr)
+
+"""
+10 5 11 10 20 12
+"""

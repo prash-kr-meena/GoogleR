@@ -1,23 +1,41 @@
-### DsAlgo Resources
+## DsAlgo Resources
 
-#### Recursion & Backtracking 
+#### Recursion & Backtracking
+
 * [Difference b/w recursion and backtracking](https://stackoverflow.com/a/26671095)
 * [backtracking](https://www.cis.upenn.edu/~matuszek/cit594-2012/Pages/backtracking.html)
 * [Backtracking - Wikipedia](https://en.wikipedia.org/wiki/Backtracking)
-* [Iteration, Recursion & Recursive Backtracking](https://sites.fas.harvard.edu/~cscie119/lectures/recursion.pdf) <br>Recursive Backtracking in General - Page 22
+* [Iteration, Recursion & Recursive Backtracking](https://sites.fas.harvard.edu/~cscie119/lectures/recursion.pdf) <br>
+  Recursive Backtracking in General - Page 22
 
-The idea is that in backtracking, some candidates are abandoned, they are explored first, but once found it did not land 
+The idea is that in backtracking, some candidates are abandoned, they are explored first, but once found it did not land
 us to correct result we go back to that state and reject that candidate, and choose a different candidate for exploring
 <br>
-With this, problem like subset_sum_k would then be a backtracking problem
-I am little confused will see -> Once Aditya teaches this topic - For now what i have done is clear to me, what we do by making input-ouput diagrams
-
+With this, problem like subset_sum_k would then be a backtracking problem I am little confused will see -> Once Aditya
+teaches this topic - For now what i have done is clear to me, what we do by making input-ouput diagrams
 
 #### Stack
+
 Learning Stacks from Aditya Verma
 
 
-### Python Resources
+
+
+
+## Code Resource
+
+#### Using list as stack
+
+* **POP**  `list.pop()`            Remove element from end
+* **PUSH**  `list.append()`        Add element from end
+* **TOP/PEEK**  `list[-1]`         Get last element
+* **SIZE**  `len(list)`            Get the size
+
+
+
+
+
+## Python Resources
 
 * [Why Pycharm showing warning about **"Shadows name xyz from outer
   scope"**](https://stackoverflow.com/questions/31575659/shadows-name-xyz-from-outer-scope)
