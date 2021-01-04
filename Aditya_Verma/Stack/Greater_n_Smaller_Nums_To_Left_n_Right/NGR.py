@@ -32,6 +32,10 @@ size : len(list)            get the size
 """
 
 
+# You can remove the first two if's, that will work too
+# Optimized stack solution
+# O(n) Time
+# O(n) Space
 def next_greatest_element_to_right(nums):
     print("Optimized Stack Solution : ")
     length = len(nums)
@@ -43,14 +47,14 @@ def next_greatest_element_to_right(nums):
         curr = nums[i]
 
         if len(stack) == 0:
-            result[i] = curr  # pushing -1
+            result[i] = -1  # pushing -1
 
         elif len(stack) != 0 and stack[-1] > curr:  # stack_top > curr element
             result[i] = stack[-1]  # stack_top
 
-        elif len(stack) != 0:  # stack_top <= curr element
-            while len(stack) != 0 and stack[-1] > curr:
-                stack.pop()
+        elif len(stack) != 0 and stack[-1] <= curr:  # stack_top <= curr element
+            while len(stack) != 0 and stack[-1] <= curr:
+                stack.pop()  # pop all elements smaller then equal to curr, unless the stack is empt
 
             # By which of the above condition, the loop has ended
             if len(stack) == 0:
