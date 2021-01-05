@@ -38,20 +38,20 @@ def next_greatest_element_to_right(nums):
         curr = nums[i]
 
         if len(stack) == 0:
-            result[i] = -1  # pushing -1
+            result[i] = -1  # result is -1, when stack is empty
 
         elif len(stack) != 0 and stack[-1] > curr:  # stack_top > curr element
-            result[i] = stack[-1]  # stack_top
+            result[i] = stack[-1]  # result is stack_top
 
         elif len(stack) != 0 and stack[-1] <= curr:  # stack_top <= curr element
             while len(stack) != 0 and stack[-1] <= curr:
-                stack.pop()  # pop all elements smaller then equal to curr, unless the stack is empt
+                stack.pop()  # pop all elements smaller then equal to curr, unless the stack is empty
 
             # By which of the above condition, the loop has ended
             if len(stack) == 0:
-                result[i] = -1  # pushing -1                similar to our 1st condition
+                result[i] = -1  # result is -1                similar to our 1st condition
             else:  # found an element greater then curr_element
-                result[i] = stack[-1]  # stack_top          similar to our 2nd condition
+                result[i] = stack[-1]  # result is stack_top          similar to our 2nd condition
 
         # Handled the current element, We have processed it
         stack.append(curr)
