@@ -53,7 +53,7 @@ def next_greatest_element_to_right(nums):
             else:  # found an element greater then curr_element
                 result[i] = stack[-1]  # result is stack_top          similar to our 2nd condition
 
-        # Handled the current element, We have processed it
+        # Handled the current element,as we have processed it
         stack.append(curr)
 
     print(nums)
