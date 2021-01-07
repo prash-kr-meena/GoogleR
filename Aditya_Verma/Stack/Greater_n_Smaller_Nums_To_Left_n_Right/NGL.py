@@ -23,7 +23,7 @@ def ngl_brute_force(nums):
 # Optimized stack solution
 # O(n) Time
 # O(n) Space
-def nearest_greater_to_left(nums):
+def nearest_greater_element_to_left(nums):
     print("\nOptimized Stack Solution : ")
     length = len(nums)
     result = [-1] * len(nums)  # Initializing all with -1 already
@@ -59,7 +59,7 @@ def nearest_greater_to_left(nums):
 if __name__ == '__main__':
     arr = list(map(int, input().strip().split()))
     ngl_brute_force(arr)
-    nearest_greater_to_left(arr)
+    nearest_greater_element_to_left(arr)
 
 """
 10 5 11 10 20 12
