@@ -65,3 +65,4 @@ Learning Stacks from Aditya Verma
     - String Slicing + Concatenation ✅
     - `str.join()` & list comprehension
 * [Enumerate in python - Programiz](https://www.programiz.com/python-programming/methods/built-in/enumerate)
+* [Getters & Setter in Python , property method , `@property` Decorator](https://www.geeksforgeeks.org/getter-and-setter-in-python/)
