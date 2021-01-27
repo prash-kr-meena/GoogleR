@@ -20,10 +20,10 @@ def nearest_smaller_to_right(nums):
         if len(stack) == 0:
             result[i] = -1  # result is -1, when stack is empty
 
-        elif len(stack) != 0 and stack[-1] < curr:  # stack_top < curr element
+        elif stack[-1] < curr:  # stack_top < curr element
             result[i] = stack[-1]  # result is stack_top
 
-        elif len(stack) != 0 and stack[-1] >= curr:  # stack_top >= curr element
+        elif stack[-1] >= curr:  # stack_top >= curr element
             while len(stack) != 0 and stack[-1] >= curr:
                 stack.pop()  # pop all the elements greater then equal to curr, unless the stack is empty
 

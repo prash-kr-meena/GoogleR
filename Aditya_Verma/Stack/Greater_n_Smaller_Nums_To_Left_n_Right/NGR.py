@@ -40,10 +40,10 @@ def next_greatest_element_to_right(nums):
         if len(stack) == 0:
             result[i] = -1  # result is -1, when stack is empty
 
-        elif len(stack) != 0 and stack[-1] > curr:  # stack_top > curr element
+        elif stack[-1] > curr:  # stack_top > curr element
             result[i] = stack[-1]  # result is stack_top
 
-        elif len(stack) != 0 and stack[-1] <= curr:  # stack_top <= curr element
+        elif stack[-1] <= curr:  # stack_top <= curr element
             while len(stack) != 0 and stack[-1] <= curr:
                 stack.pop()  # pop all elements smaller then equal to curr, unless the stack is empty
 
@@ -65,3 +65,12 @@ if __name__ == '__main__':
     arr = list(map(int, input().strip().split()))
     ngr_brute_force(arr)
     next_greatest_element_to_right(arr)
+
+"""
+Input   1 3 2 4
+Output  3 4 4 -1
+
+
+Input   6 8 0 1 3
+Output  8 -1 1 3 -1
+"""

@@ -35,10 +35,10 @@ def nearest_greater_element_to_left(nums):
         if len(stack) == 0:
             result[i] = -1  # result is -1
 
-        elif len(stack) != 0 and stack[-1] > curr:
+        elif stack[-1] > curr:
             result[i] = stack[-1]  # result is stack_top
 
-        elif len(stack) != 0 and stack[-1] <= curr:
+        elif stack[-1] <= curr:
             while len(stack) != 0 and stack[-1] <= curr:
                 stack.pop()  # pop stack_top till they are smaller then current
 
