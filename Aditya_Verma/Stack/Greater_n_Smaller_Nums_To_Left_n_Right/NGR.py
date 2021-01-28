@@ -48,9 +48,9 @@ def next_greatest_element_to_right(nums):
 
             # By which of the above condition, the loop has ended
             if len(stack) == 0:
-                result[i] = -1  # result is -1                similar to our 1st condition
+                result[i] = -1  # result is -1      <similar to our 1st condition>
             else:  # found an element greater then curr_element
-                result[i] = stack[-1]  # result is stack_top          similar to our 2nd condition
+                result[i] = stack[-1]  # result is stack_top   <similar to our 2nd condition>
 
         # Handled the current element, We have processed it
         stack.append(curr)
