@@ -26,7 +26,7 @@ def ngl_brute_force(nums):
 def nearest_greater_element_to_left(nums):
     print("\nOptimized Stack Solution : ")
     length = len(nums)
-    result = [-1] * len(nums)  # Initializing all with -1 already
+    result = [-1] * length  # Initializing all with -1 already
     stack = []  # Using list as stack
 
     for i in range(0, length):  # Going Forwar

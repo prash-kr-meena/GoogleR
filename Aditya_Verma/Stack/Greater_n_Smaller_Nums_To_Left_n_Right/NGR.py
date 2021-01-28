@@ -11,7 +11,7 @@ NGR     |     Nearest Greater to right     |     Next Largest Element (GfG)
 def ngr_brute_force(nums) -> List[int]:
     print("Brute Force Solution : ")
     length = len(nums)
-    result = [-1] * len(nums)  # Initializing all with -1 already
+    result = [-1] * length  # Initializing all with -1 already
 
     for i in range(0, length):
         for j in range(i + 1, length):  # j depends on i
@@ -30,7 +30,7 @@ def ngr_brute_force(nums) -> List[int]:
 def next_greatest_element_to_right(nums):
     print("\nOptimized Stack Solution : ")
     length = len(nums)
-    result = [-1] * len(nums)  # Initializing all with -1 already
+    result = [-1] * length  # Initializing all with -1 already
     stack = []  # Using list as stack
 
     for i in range(length - 1, -1, -1):  # n-1 to 0 in reverse

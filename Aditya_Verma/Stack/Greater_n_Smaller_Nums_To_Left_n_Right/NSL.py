@@ -4,7 +4,6 @@
 
 
 # You can remove the first two if's, that will work too
-
 # Optimized stack solution
 # O(n) Time
 # O(n) Space
