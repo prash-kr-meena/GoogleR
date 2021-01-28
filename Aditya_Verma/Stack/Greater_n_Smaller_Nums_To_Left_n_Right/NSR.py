@@ -24,7 +24,7 @@ def nearest_smaller_to_right(nums):
 
         elif stack[-1] >= curr:  # stack_top >= curr element
             while len(stack) != 0 and stack[-1] >= curr:
-                stack.pop()  # pop all elements smaller then equal to curr, until the stack is empty
+                stack.pop()  # pop all elements greater then equal to curr, until the stack is empty
 
             # By which of the above condition, the loop has ended
             if len(stack) == 0:

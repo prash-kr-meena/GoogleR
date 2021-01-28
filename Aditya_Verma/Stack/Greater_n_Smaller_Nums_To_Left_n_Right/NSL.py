@@ -10,26 +10,26 @@
 def nearest_smaller_to_left(nums):
     print("\nOptimized Stack Solution : ")
     length = len(nums)
-    result = [-1] * len(nums)  # Initializing all with -1 already
+    result = [-1] * length  # Initializing all with -1 already
     stack = []  # Using list as stack
 
-    for i in range(0, length):
+    for i in range(0, length):  # Going forward
         curr = nums[i]
 
         if len(stack) == 0:
             result[i] = -1  # result is -1, when stack is empty
 
-        elif stack[-1] < curr:  # stack_top < curr element      ## Changed Notice
-            result[i] = stack[-1]  # result is
+        elif stack[-1] < curr:  # stack_top < curr element
+            result[i] = stack[-1]  # result is stack_top
 
-        elif stack[-1] >= curr:
+        elif stack[-1] >= curr:  # stack_top >= curr element
             while len(stack) != 0 and stack[-1] >= curr:
-                stack.pop()  # pop all elements greater then or equal to curr, unless the stack is empty
+                stack.pop()  # pop all elements greater then equal to curr, until the stack is empty
 
             # By which of the above condition, the loop has ended
             if len(stack) == 0:
                 result[i] = -1  # result is -1                similar to our 1st condition
-            else:
+            else:  # found an element smaller then curr_element
                 result[i] = stack[-1]  # result is stack_top          similar to our 2nd condition
 
         # Handled the current element, We have processed it
