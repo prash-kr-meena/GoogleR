@@ -29,7 +29,7 @@ def nearest_greater_element_to_left(nums):
     result = [-1] * length  # Initializing all with -1 already
     stack = []  # Using list as stack
 
-    for i in range(0, length):  # Going Forwar
+    for i in range(0, length):  # Going Forward
         curr = nums[i]
 
         if len(stack) == 0:
