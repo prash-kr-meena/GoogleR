@@ -28,10 +28,9 @@ def ngr_brute_force(nums) -> List[int]:
 # O(n) Time
 # O(n) Space
 def next_greatest_element_to_right(nums):
-    print("Optimized Stack Solution : ")
+    print("\nOptimized Stack Solution : ")
     length = len(nums)
     result = [-1] * len(nums)  # Initializing all with -1 already
-
     stack = []  # Using list as stack
 
     for i in range(length - 1, -1, -1):  # n-1 to 0 in reverse
@@ -45,7 +44,7 @@ def next_greatest_element_to_right(nums):
 
         elif stack[-1] <= curr:  # stack_top <= curr element
             while len(stack) != 0 and stack[-1] <= curr:
-                stack.pop()  # pop all elements smaller then equal to curr, unless the stack is empty
+                stack.pop()  # pop all elements smaller then equal to curr, until the stack is empty
 
             # By which of the above condition, the loop has ended
             if len(stack) == 0:
@@ -53,7 +52,7 @@ def next_greatest_element_to_right(nums):
             else:  # found an element greater then curr_element
                 result[i] = stack[-1]  # result is stack_top          similar to our 2nd condition
 
-        # Handled the current element,as we have processed it
+        # Handled the current element, We have processed it
         stack.append(curr)
 
     print(nums)
