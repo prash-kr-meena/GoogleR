@@ -18,6 +18,7 @@ class Pair:
         return self._index
 
 
+# Using Stack ADT
 def nearest_greater_element_index_to_left(nums):
     length = len(nums)
     result = [-1] * len(nums)
