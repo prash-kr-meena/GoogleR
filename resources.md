@@ -66,3 +66,5 @@ Learning Stacks from Aditya Verma
     - `str.join()` & list comprehension
 * [Enumerate in python - Programiz](https://www.programiz.com/python-programming/methods/built-in/enumerate)
 * [Getters & Setter in Python , property method , `@property` Decorator](https://www.geeksforgeeks.org/getter-and-setter-in-python/)
+* [How to iterate through two lists in parallel?  `zip()`](https://stackoverflow.com/questions/1663807/how-to-iterate-through-two-lists-in-parallel) <br>
+    checkout the `Maximum_Area_Histogram.py` to see the use of `zip()` in `list-enumeration`
