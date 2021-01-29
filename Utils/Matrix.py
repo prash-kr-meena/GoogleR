@@ -1,5 +1,22 @@
+from typing import List
+
+
 def get_filled_matrix(row_size, col_size, fill=0):
     return [[fill for _ in range(col_size)] for _ in range(row_size)]
+
+
+def input_integer_matrix() -> List[List[int]]:
+    """
+    Jagged Array Is Possible : https://en.wikipedia.org/wiki/Jagged_array
+    Notice : you need to be careful, on the no of columns you are putting
+    """
+    row = int(input("row :"))
+
+    matrix = []
+    for _ in range(row):
+        row = list(map(int, input().strip().split()))
+        matrix.append(row)
+    return matrix
 
 
 def print_matrix(matrix):
@@ -24,3 +41,6 @@ if __name__ == "__main__":
 
     print_matrix(arr2D)
     print_matrix_beautiful(arr2D)
+
+    arr2D = input_integer_matrix()
+    print(arr2D)
