@@ -1,3 +1,4 @@
+from Utils.Array import input_array
 from typing import List
 
 """
@@ -61,7 +62,7 @@ def next_greatest_element_to_right(nums):
 
 
 if __name__ == '__main__':
-    arr = list(map(int, input().strip().split()))
+    arr = input_array()
     ngr_brute_force(arr)
     next_greatest_element_to_right(arr)
 

@@ -1,3 +1,6 @@
+from Utils.Array import input_array
+
+
 # You can remove the first two if's, that will work too
 # Optimized stack solution
 # O(n) Time
@@ -33,7 +36,7 @@ def indexes_of_next_smaller_element_to_right(nums):
 
 
 if __name__ == '__main__':
-    buildings = list(map(int, input().strip().split()))
+    buildings = input_array()
     indexes = indexes_of_next_smaller_element_to_right(buildings)
     print(indexes)
 

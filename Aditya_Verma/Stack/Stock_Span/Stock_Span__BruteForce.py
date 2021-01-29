@@ -1,3 +1,6 @@
+from Utils.Array import input_array
+
+
 # O(n2) Time
 # O(1) Space
 def get_stock_span_values(nums) -> list:
@@ -18,7 +21,7 @@ def get_stock_span_values(nums) -> list:
 
 
 if __name__ == '__main__':
-    arr = list(map(int, input().strip().split()))
+    arr = input_array()
     result = get_stock_span_values(arr)
     print(result)
 

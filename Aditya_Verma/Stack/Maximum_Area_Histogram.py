@@ -2,6 +2,7 @@ from Aditya_Verma.Stack.Index__Greater_n_Smaller_Nums_To_Left_n_Right.NSL_Index 
     indexes_of_next_smaller_element_to_left
 from Aditya_Verma.Stack.Index__Greater_n_Smaller_Nums_To_Left_n_Right.NSR_Index import \
     indexes_of_next_smaller_element_to_right
+from Utils.Array import input_array
 
 """ MAH   |   Maximum Area Of Histogram """
 
@@ -37,7 +38,7 @@ def mah(buildings) -> int:  # Return Max Area
 
 
 if __name__ == '__main__':
-    buildings = list(map(int, input().strip().split()))
+    buildings = input_array()
     print(mah(buildings))
 
 """

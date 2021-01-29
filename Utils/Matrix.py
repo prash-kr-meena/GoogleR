@@ -1,4 +1,5 @@
 from typing import List
+from Utils.Array import input_array
 
 
 def get_filled_matrix(row_size, col_size, fill=0):
@@ -14,7 +15,7 @@ def input_integer_matrix() -> List[List[int]]:
 
     matrix = []
     for _ in range(row):
-        row = list(map(int, input().strip().split()))
+        row = input_array()
         matrix.append(row)
     return matrix
 

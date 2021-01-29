@@ -1,5 +1,6 @@
 from Aditya_Verma.Stack.Index__Greater_n_Smaller_Nums_To_Left_n_Right.NGL_Index import \
     indexes_of_next_greater_element_to_left
+from Utils.Array import input_array
 
 
 # You can remove the first two if's, that will work too
@@ -17,7 +18,7 @@ def get_result_array(ngl_index_array):
 
 
 if __name__ == '__main__':
-    arr = list(map(int, input().strip().split()))
+    arr = input_array()
     ngl_index_array = indexes_of_next_greater_element_to_left(arr)
     print(get_result_array(ngl_index_array))
 

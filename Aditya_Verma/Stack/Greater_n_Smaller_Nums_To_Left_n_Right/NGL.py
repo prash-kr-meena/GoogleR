@@ -1,3 +1,5 @@
+from Utils.Array import input_array
+
 """
 NGL  |  Nearest Greater to left
 """
@@ -57,7 +59,7 @@ def nearest_greater_element_to_left(nums):
 
 
 if __name__ == '__main__':
-    arr = list(map(int, input().strip().split()))
+    arr = input_array()
     ngl_brute_force(arr)
     nearest_greater_element_to_left(arr)
 

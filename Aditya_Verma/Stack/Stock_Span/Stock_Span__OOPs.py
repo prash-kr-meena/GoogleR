@@ -1,4 +1,5 @@
 from Abstract_Data_Types.StackADT import StackADT
+from Utils.Array import input_array
 
 """
 Idea is to make it more object oriented solution
@@ -61,7 +62,7 @@ def get_result_array(ngl_index_array):
 
 
 if __name__ == '__main__':
-    arr = list(map(int, input().strip().split()))
+    arr = input_array()
     ngl_index_array = nearest_greater_element_index_to_left(arr)
     print(get_result_array(ngl_index_array))
 

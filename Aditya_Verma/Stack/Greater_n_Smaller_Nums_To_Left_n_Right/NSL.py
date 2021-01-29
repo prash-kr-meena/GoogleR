@@ -1,3 +1,5 @@
+from Utils.Array import input_array
+
 """
  NSL  |  Nearest Smaller to Left  |  Next Smallest Element (GfG)
 """
@@ -41,7 +43,7 @@ def nearest_smaller_to_left(nums):
 
 
 if __name__ == '__main__':
-    arr = list(map(int, input().strip().split()))
+    arr = input_array()
     nearest_smaller_to_left(arr)
 
 """
