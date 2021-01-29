@@ -12,16 +12,16 @@ def print_array_inline(arr: List) -> None:
     print(" ".join(list_of_string))
 
 
-def print_array_multiline(arr: List) -> None:
-    for element in arr:
-        print(element)
-
-
 # If you want space at the end of it
 def print_array_by_traversing(arr: List) -> None:
     for element in arr:
         print(element, end=" ")
     print()
+
+
+def print_array_multiline(arr: List) -> None:
+    for element in arr:
+        print(element)
 
 
 if __name__ == "__main__":
