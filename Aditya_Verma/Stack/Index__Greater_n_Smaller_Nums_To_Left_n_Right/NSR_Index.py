@@ -29,14 +29,13 @@ def indexes_of_next_smaller_element_to_right(nums):
         # Handled the current element, We have processed it
         stack.append((curr, i))  # Notice  0: value, 1: index
 
-    print(nums)
-    print(result)
     return result
 
 
 if __name__ == '__main__':
     buildings = list(map(int, input().strip().split()))
-    indexes_of_next_smaller_element_to_right(buildings)
+    indexes = indexes_of_next_smaller_element_to_right(buildings)
+    print(indexes)
 
 """
 6 2 5 4 5 1 6
