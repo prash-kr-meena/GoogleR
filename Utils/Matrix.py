@@ -19,6 +19,20 @@ def input_integer_matrix() -> List[List[int]]:
     return matrix
 
 
+def input_character_matrix() -> List[List[str]]:
+    """
+    Jagged Array Is Possible : https://en.wikipedia.org/wiki/Jagged_array
+    Notice : you need to be careful, on the no of columns you are putting
+    """
+    row = int(input("row :"))
+
+    matrix = []
+    for _ in range(row):
+        row = list(input().strip().split())
+        matrix.append(row)
+    return matrix
+
+
 def print_matrix(matrix):
     for row in matrix:
         print(row)
