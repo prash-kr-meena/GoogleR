@@ -1,5 +1,6 @@
 # This doesn't actually change the underlying array
 # -> returning a new array that is in reverse order
+# Notice : This type of reversal will work with both, Array & String
 def reverse_pythonic(arr):
     return arr[::-1]
 
@@ -19,7 +20,7 @@ def reverse_iterative(arr):
 # This is inplace, _ ie modifying the underlying array
 def reverse_recursively_helper(arr, start, end):
     if start >= end:
-        return  # traveral complete
+        return  # traversal complete
 
     # swap the two extreme elements
     arr[start], arr[end] = arr[end], arr[start]
@@ -27,7 +28,7 @@ def reverse_recursively_helper(arr, start, end):
 
 
 def reverse_recursive(arr):
-    if arr is None or len(arr) < 2:
+    if arr is None or len(arr) < 2:  # Edge Case
         return arr
 
     reverse_recursively_helper(arr, 0, len(arr) - 1)
@@ -36,7 +37,8 @@ def reverse_recursive(arr):
 
 if __name__ == "__main__":
     array = [1, 2, 3, 4, 5]  # Custom Input
-    print(reverse_pythonic(array))
+    print(reverse_pythonic(array))  # Out of Place
+
     print(reverse_iterative(array))  # reversed
     print(reverse_recursive(array))  # reversed again -> correct order
 

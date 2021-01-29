@@ -1,4 +1,4 @@
-def max_min_n_comparisons(A):
+def min_max_in_n_comparisons(A):
     minimum = float('inf')
     maximum = float('-inf')
     for a in A:
@@ -10,7 +10,7 @@ def max_min_n_comparisons(A):
 
 
 arr = [1, 3, 4, 2, 0, 7, 1, 3]
-print(max_min_n_comparisons(arr))
+print(min_max_in_n_comparisons(arr))
 
 '''
 [1000, 11, 445, 1, 330, 3000]
