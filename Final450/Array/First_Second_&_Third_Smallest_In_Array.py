@@ -1,3 +1,5 @@
+from Utils.Array import input_array
+
 """
  https://www.geeksforgeeks.org/to-find-smallest-and-second-smallest-element-in-an-array/
  Find the smallest and second smallest elements in an array
@@ -27,9 +29,7 @@ def find_first_second_and_third_smallest(nums):
 
 
 if __name__ == "__main__":
-    split = input("List of integer numbers\n").split()
-    nums = list(map(int, split))
-    print(nums)
+    nums = input_array("List of integer numbers")
     first, second, third = find_first_second_and_third_smallest(nums)
     print(first, second, third)
 
@@ -37,8 +37,8 @@ if __name__ == "__main__":
 ------- Test cases ------- 
 
 12 13 2 11 0 10
-1 2 3 4 5 6 7       VVImp
-7 7 7 7 7 7 7       Imp
+1 2 3 4 5 6 7       Imp
+7 7 7 7 7 7 7       VVImp
 3 2 2 1 1 2 3       v.v.v Imp   basically duplicate first and second smallest   
                     Need special condition otherwise both first and second will be same ie, 1, 1
 

@@ -30,7 +30,6 @@ def find_first_and_second_smallest(nums):
 
 if __name__ == "__main__":
     nums = input_array("List of integer numbers")
-    print(nums)
     first, second = find_first_and_second_smallest(nums)
     print(first, second)
 
