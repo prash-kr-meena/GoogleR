@@ -17,6 +17,24 @@ def randomize_pivot(A, left, right):
     # Right now our pivot is at index right  NOTE <<
 
 
+"""
+    FCPI = future_correct_pivot_index
+
+     FCPI
+      |
+      v                  |
+    .--------------------------.
+    [ 1   3   5   4   6  |  2  ]
+    '--------------------------'
+      ^                  |  ^
+      |                  |  |
+    Left   ===========>  | Right
+
+    move from left to right (2nd last element), comparing with the pivot ie, A[right]
+    and updating the future_correct_pivot_index, so that in the end we can put the pivot there
+"""
+
+
 def partition(A, left, right):
     """
     Its task is do the partition and return the pivot_index
