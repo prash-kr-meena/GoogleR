@@ -2,9 +2,9 @@ from Final450.Searching_Sorting.Algorithms.Quick_Select import quick_select
 
 """
 Average Case Time : O(n)      --> Using randomized partitioning, in our QuickSelect implementation
-Worst case : O(n2)
+Worst case : O(n^2)
 
-here, k is 1_indexed
+here, k is 1_indexed (Assumption)
 """
 
 

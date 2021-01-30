@@ -2,7 +2,7 @@ from typing import List
 
 
 # input an list of space-separated integers <array>
-def input_array(prompt) -> list:
+def input_array(prompt="arr") -> list:
     print(prompt, end=" : ")
     return list(map(int, input().strip().split()))
 

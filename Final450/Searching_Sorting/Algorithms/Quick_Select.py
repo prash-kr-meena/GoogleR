@@ -1,6 +1,10 @@
-# https://www.geeksforgeeks.org/quickselect-algorithm/
-
 import random
+
+from Utils.Array import input_array
+
+"""
+https://www.geeksforgeeks.org/quickselect-algorithm/
+"""
 
 
 def randomize_pivot(A, left, right):
@@ -46,16 +50,19 @@ def partition(A, left, right):
     return future_correct_pivot_index
 
 
-# Assuming if k was 1_index_base, then this method is receiving k-1
-# some basic checks, like  0 >= k <= arr_size, before calling this function
-#       ie the element asked should be in the range of the array, are ASSUMED
+"""
+Assuming if k was 1_index_base, then this method is receiving k-1
+some basic checks, like  0 >= k <= arr_size, before calling this function
+      ie the element asked should be in the range of the array, are ASSUMED
 
 
-# One more ASSUMPTION : all elements in arr[] are distinct
-# --> As this algorithm doesn't work with duplicate elements
+One more ASSUMPTION : all elements in arr[] are distinct
+--> As this algorithm doesn't work with duplicate elements
 
-# k is the kth (0 indexed) element that, I want to find
-# kth_element_in_sorted_sense --> Basically kth smallest element in the array
+k is the kth (0 indexed) element that, I want to find
+kth_element_in_sorted_sense --> Basically kth smallest element in the array
+"""
+
 
 def quick_select(A, left, right, k):
     # Edge cases - Assumed checks
@@ -78,12 +85,15 @@ def quick_select(A, left, right, k):
 
 
 if __name__ == "__main__":
-    # arr = [1, 3, 5, 4, 6, 2]  # random
-    # arr = [12, 3, 5, 7, 4, 19, 26]        # random
-    # arr = [9, 8, 7, 6, 5, 4, 3, 2, 1]     # reverse sorted
-    # arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]   # sorted
-    arr = [1, 2, 3, 4, 1, 2, 3, 4, 9, 10]  # random duplicates -- CHECK IT OUT
-
+    arr = input_array()
     for _ in range(len(arr)):  # put high no in range to see the edge cases
         num = quick_select(arr, left=0, right=len(arr) - 1, k=_)
         print(num)
+
+"""
+1 3 5 4 6 2             # random
+12 3 5 7 4 19 26        # random
+9 8 7 6 5 4 3 2 1       # reverse sorted
+1 2 3 4 5 6 7 8 9 10    # sorted
+1 2 3 4 1 2 3 4 9 10    # random duplicates -- CHECK IT OUT
+"""
