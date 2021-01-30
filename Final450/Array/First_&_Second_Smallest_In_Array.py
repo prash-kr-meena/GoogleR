@@ -1,3 +1,5 @@
+from Utils.Array import input_array
+
 """
  https://www.geeksforgeeks.org/to-find-smallest-and-second-smallest-element-in-an-array/
  Find the smallest and second smallest elements in an array
@@ -27,8 +29,7 @@ def find_first_and_second_smallest(nums):
 
 
 if __name__ == "__main__":
-    split = input("List of integer numbers\n").split()
-    nums = list(map(int, split))
+    nums = input_array("List of integer numbers")
     print(nums)
     first, second = find_first_and_second_smallest(nums)
     print(first, second)
