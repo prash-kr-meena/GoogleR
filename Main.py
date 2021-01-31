@@ -41,3 +41,27 @@ print(a_list)
 # Going in reverse with range
 print(list(range(0, 10, -1)))
 print(list(range(10, 0, -1)))
+
+# Applying custom Sorting
+
+# Nested list of student's info in a Science Olympiad
+# List elements: (Student's Name, Marks out of 100, Age)
+participant_list = [
+    ('Alison', 50, 18),
+    ('Terence', 75, 12),
+    ('David', 75, 20),
+    ('Jimmy', 90, 22),
+    ('John', 45, 12)
+]
+
+# sorting on the basis of their age
+sorted_by_age = sorted(participant_list, key=lambda student_element: student_element[2])
+print(sorted_by_age)
+
+# sorting on the basis of their marks
+sorted_by_marks = sorted(participant_list, key=lambda student_element: student_element[1])
+print(sorted_by_marks)
+
+# sorting on the basis of their names
+sorted_by_name = sorted(participant_list, key=lambda student_element: student_element[0])
+print(sorted_by_name)

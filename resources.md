@@ -18,10 +18,6 @@ teaches this topic - For now what i have done is clear to me, what we do by maki
 
 Learning Stacks from Aditya Verma
 
-
-
-
-
 ## Code Resource
 
 #### Using list as stack
@@ -30,10 +26,6 @@ Learning Stacks from Aditya Verma
 * **PUSH**  `list.append()`        Add element from end
 * **TOP/PEEK**  `list[-1]`         Get last element
 * **SIZE**  `len(list)`            Get the size
-
-
-
-
 
 ## Python Resources
 
@@ -67,4 +59,27 @@ Learning Stacks from Aditya Verma
 * [Enumerate in python - Programiz](https://www.programiz.com/python-programming/methods/built-in/enumerate)
 * [Getters & Setter in Python , property method , `@property` Decorator](https://www.geeksforgeeks.org/getter-and-setter-in-python/)
 * [How to iterate through two lists in parallel?  `zip()`](https://stackoverflow.com/questions/1663807/how-to-iterate-through-two-lists-in-parallel) <br>
-    checkout the `Maximum_Area_Histogram.py` to see the use of `zip()` in `list-enumeration`
+  checkout the `Maximum_Area_Histogram.py` to see the use of `zip()` in `list-enumeration`
+* [`sorted()` method in python, How to provide custom sorting logic](https://www.programiz.com/python-programming/methods/built-in/sorted)
+    - Note :    it is not an in-place, ie it doesn't actually change the underlying iterable <br> and returns the new
+      sorted iterable
+    - `sorted(iterable, key=None, reverse=False)`   key and revers are **optional**
+    - In case of list there exists a method `sort()` which is actually inplace, and doesn't return anything
+    - The`key` parameter, is actually a function, that you can provide to give your own implementation of the `sorted()`
+      method <br>
+      Based on the returned value of the `key`Z function, you can sort the given iterable.
+    - [Sorted() function in Python - GFG](https://www.geeksforgeeks.org/sorted-function-python/)
+
+* [Python Anonymous/Lambda Function](https://www.programiz.com/python-programming/anonymous-function)
+    - syntax : `lambda arguments: expression`
+    - Lambda functions can have any number of arguments but only one expression.
+    - The expression is evaluated and returned.
+    - Lambda functions can be used wherever function objects are required
+    - In Python, we generally use it as an argument to a **higher-order function** (a function that takes in other
+      functions as arguments).
+    - Lambda functions are used along with built-in functions like `filter()`, `map()` etc.
+      > check out the example for `filter()` and `map()` using lambda function above
+
+* [Python `map()`](https://www.programiz.com/python-programming/methods/built-in/map)
+* [Python `filter()`](https://www.programiz.com/python-programming/methods/built-in/filter)
+    - You can see Iterators as just easy list comprehension (list, tuple, set etc) statement 
