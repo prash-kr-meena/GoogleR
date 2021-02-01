@@ -82,4 +82,9 @@ Learning Stacks from Aditya Verma
 
 * [Python `map()`](https://www.programiz.com/python-programming/methods/built-in/map)
 * [Python `filter()`](https://www.programiz.com/python-programming/methods/built-in/filter)
-    - You can see Iterators as just easy list comprehension (list, tuple, set etc) statement 
+    - You can see Iterators as just easy list comprehension (list, tuple, set etc) statement
+* [Tuples in python - Programiz](https://www.programiz.com/python-programming/tuple)
+  <br>[Python Tuple Operations](https://note.nkmk.me/en/python-tuple-operation)
+    - What are the advantages of Tuple over List
+* [How to sort a set in python?](https://stackoverflow.com/questions/55389165/how-to-sort-a-set-in-python)  **You
+  can't**
