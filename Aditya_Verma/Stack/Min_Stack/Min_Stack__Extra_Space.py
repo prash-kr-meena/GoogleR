@@ -1,4 +1,5 @@
 from Abstract_Data_Types.StackADT import StackADT
+from Utils.Array import input_array
 
 
 class MinStackADT:
@@ -45,22 +46,19 @@ class MinStackADT:
 
 def demonstrate_min_stack():
     minstack = MinStackADT()
-    minstack.push(18)
-    minstack.push(19)
-    minstack.push(29)
-    minstack.push(15)
-    minstack.push(16)
-    print(minstack.min())
-    minstack.pop()
-    print(minstack.min())
-    minstack.pop()
-    print(minstack.min())
-    minstack.pop()
-    print(minstack.min())
-    minstack.pop()
-    print(minstack.min())
-    minstack.pop()
+
+    numbers = input_array()
+    for num in numbers:
+        minstack.push(num)
+
+    while minstack.size() != 0:
+        print(minstack.min())
+        minstack.pop()
 
 
 if __name__ == '__main__':
     demonstrate_min_stack()
+
+"""
+18 19 29 15 16
+"""
