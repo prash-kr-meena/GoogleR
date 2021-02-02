@@ -45,8 +45,8 @@ class MinStackADT:
                 # The minimum element of the stack, is still the min_element
                 return element
             else:
-                self.min_element = 2 * self.min_element - element  # Notice : Formula
-                return self.min_element  # the correct value of stack, and the correct minimum
+                # Notice : we are not updating the min_element here, as this operation is peek() and not pop()
+                return 2 * self.min_element - element  # Notice : Formula
 
     def min(self):
         return self.min_element
