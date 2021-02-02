@@ -7,7 +7,6 @@ from collections import deque
 
 # Stack_ADT_Using_Deque
 class StackADT:
-
     # stack = deque()       initializing a deque, named stack
 
     def __init__(self, list_of_elements=None):
