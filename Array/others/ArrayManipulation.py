@@ -12,20 +12,19 @@ def array_manipulation(n, queries) -> int:
     arr = [0] * length
 
     for query in queries:
-        left = query[0]
-        right = query[1]
-        value = query[2]
-
+        left, right, value = query[0], query[1], query[2]
         # Logic to help in prefix-sum algorithm
-        arr[left] = arr[left] + value
-        arr[right + 1] = arr[right + 1] + (-value)
+        arr[left] += value  # Adding   value to idx_left
+        arr[right + 1] -= value  # Adding (-value) to idx_right+1
 
-    # from pre-fix algorithm
+    # Applying pre-fix algorithm  AND  at the same time also getting the max
+    maximum = float("-inf")
     for i in range(1, length):
         arr[i] = arr[i] + arr[i - 1]
+        maximum = max(maximum, arr[i])
 
-    print(arr)
-    return max(arr)
+    # print(arr)
+    return maximum
 
 
 if __name__ == '__main__':
