@@ -1,6 +1,7 @@
 # https://www.hackerrank.com/challenges/crush/problem
 """
 Prerequisite to solve this problem : PrefixSum
+This is a variation of prefix-sum
 """
 
 
@@ -47,6 +48,5 @@ Input
 
 Output
 200
-
 
 """
