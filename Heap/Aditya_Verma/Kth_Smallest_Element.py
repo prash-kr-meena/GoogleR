@@ -10,7 +10,7 @@ Note : this problem can also be done by the quick select algorithm
 # As the problem is for kth Smallest : we need to make a Max-heap
 # which in case of primitives, we make by using -ve values with MIN-Heap
 def kth_smallest(A, left, right, k):
-    heap = []  # using a min-heap
+    heap = []  # using min-heap as Max-Heap
     heapify(heap)
 
     for element in A:
