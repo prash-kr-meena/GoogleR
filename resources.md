@@ -89,3 +89,13 @@ Learning Stacks from Aditya Verma
 * [How to sort a set in python?](https://stackoverflow.com/questions/55389165/how-to-sort-a-set-in-python)  **You
   can't**
 * [Advanced Sorting in Python Using Lambdas and Custom Functions](https://medium.com/better-programming/advanced-sorting-in-python-using-lambdas-and-custom-functions-410b5780fb07)
+* [Magic Methods `__init__` `__lt__`](https://blog.cambridgespark.com/magic-methods-a8d93dc55012) **Great Article** -
+  With Implementation examples
+* [Python Heapq Module, Using ith with primitive and complex typ of object](https://towardsdatascience.com/introduction-to-python-heapq-module-53534feda625)
+* [Python heapq Module: Using heapq to Build Priority Queues in Python](https://www.askpython.com/python-modules/python-heapq-module)
+* [Making max heap for Primitive type (by negating the values)](https://www.geeksforgeeks.org/max-heap-in-python/)
+
+- In case of objects, you can overload the `__lt__` method
+- But for primitive types we would require to either
+    1. wrap it in an object and implement `__lt__`
+    2. or we can multiply it by -1
