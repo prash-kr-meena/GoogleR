@@ -88,3 +88,4 @@ Learning Stacks from Aditya Verma
     - What are the advantages of Tuple over List
 * [How to sort a set in python?](https://stackoverflow.com/questions/55389165/how-to-sort-a-set-in-python)  **You
   can't**
+* [Advanced Sorting in Python Using Lambdas and Custom Functions](https://medium.com/better-programming/advanced-sorting-in-python-using-lambdas-and-custom-functions-410b5780fb07)
