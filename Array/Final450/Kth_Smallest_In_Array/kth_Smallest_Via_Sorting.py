@@ -6,7 +6,7 @@ from Utils.Array import input_array
 
 # k is 1_indexed (Assumption)
 def kth_smallest__sorting(A, k):
-    A.sort()
+    A.sort()  # This is inplace sort, sorted(A) will be out-of-place
     return A[k - 1]
 
 
