@@ -15,8 +15,8 @@ def prefix_sum(actual_array) -> list:
 
 if __name__ == '__main__':
     array = input_array()
-    prefix_sum(array)
-    print(array)
+    prefix_sum_arr = prefix_sum(array)
+    print(prefix_sum_arr)
 
 """
 6 3 -2 4 -1 0 -5
