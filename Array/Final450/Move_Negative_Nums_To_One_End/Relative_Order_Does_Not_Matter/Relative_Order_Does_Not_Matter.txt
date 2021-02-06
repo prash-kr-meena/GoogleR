@@ -1,0 +1,22 @@
+if i don't want to use extra space:
+
+1. Sorting 		: 	With sorting obviously we can put all the -ve numbers earlier then +ve O(n lg n) time
+					And if the requirement is of +ve before -ve :  then we can achieve it by just passing the reverse=True attribute
+					in the sort() or sorted() method depending on if we need in-place or out-of-place implementation
+
+2. Partition 	: 	We can use the quick-sort and quick-selects partition method.
+					And we can partition around 0. Doesn't matter if 0 is part of the acual set or not
+					And if the requirement is of +ve before -ve : Then we need to change our partition method a littleb bit,
+					where instead of swapping the -ve number with the +ve number, rather then +ve no with -ve no
+
+
+if extra space is allowed:
+
+1. 2 Pass method	:	we can create a new array of same size and, then
+						in the first traversal of the original_array, we find all the -ve elements and put
+						(append, if we crated empty array) them to the new_array
+
+						Similarly, for the +ve elements in the next traversal of original_array,
+						we need to add (append) them to the new_array
+
+

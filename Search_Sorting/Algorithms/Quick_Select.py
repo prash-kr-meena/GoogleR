@@ -1,13 +1,12 @@
 from Search_Sorting.Algorithms.Quick_Sort import partition
 from Utils.Array import input_array
 
-"""
-https://www.geeksforgeeks.org/quickselect-algorithm/
-"""
+# https://www.geeksforgeeks.org/quickselect-algorithm/
 
-# Not :  The partition process is exactly the same that is being used in the quicksort process,
-#         The difference bw the quick_sort & quick_select is the way they uses this pivot_index
-
+"""
+Note :  The partition process is exactly the same that is being used in the quicksort process,
+        The difference bw the quick_sort & quick_select is the way they uses this pivot_index
+"""
 
 """
 One more ASSUMPTION : all elements in arr[] are distinct
@@ -18,7 +17,7 @@ One more ASSUMPTION : all elements in arr[] are distinct
 # Assuming if k was 1_index_base, then this method is receiving k-1
 # 1.  Element asked should be in the range of the array  ie, 0 >= k <= arr_size
 
-# Find kth element
+# Find kth element, such that the array is sorted, Even though it is not sorted
 def quick_select(A, left, right, k):  # kth (0 indexed) element that, I want to find
     # Edge cases - Assumed checks
     if left > right:

@@ -12,6 +12,7 @@ here, k is 1_indexed (Assumption)
 def kth_smallest__quick_select(A, k):
     return quick_select(A, left=0, right=len(A) - 1, k=k - 1)
     # But QuickSelect Method takes k as 0_indexed
+    # If required to find Kth_Largest, you can just ask quick_select algorithm to find the (n-k)th element Notice
 
 
 if __name__ == '__main__':
