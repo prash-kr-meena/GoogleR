@@ -2,21 +2,22 @@ if i don't want to use extra space:
 
 1. Sorting 		: 	With sorting obviously we can put all the -ve numbers earlier then +ve O(n lg n) time
 					And if the requirement is of +ve before -ve :  then we can achieve it by just passing the reverse=True attribute
-					in the sort() or sorted() method depending on if we need in-place or out-of-place implementation
+					in the sort() or sorted() method depening on if we need in-place or out-of-place implementation
 
-2. Partition 	: 	We can use the quick-sort and quick-selects partition method.
+2. Partition 	: 	We can use the quick-sort and quick-select's partition method.
 					And we can partition around 0. Doesn't matter if 0 is part of the acual set or not
 					And if the requirement is of +ve before -ve : Then we need to change our partition method a littleb bit,
 					where instead of swapping the -ve number with the +ve number, rather then +ve no with -ve no
 
+3. Two Pointer	:	We can have two pointers at the two extremes, of the original_array, LEFT & RIGHT
+					Now, we need to move LEFT to rigth direction till we find a +ve number
+					and we need to move RIGHT to left  direction till we find a -ve number
+					and once we found it, we need to replace our  array elements at [LEFT] & [RIGHT]
+					and we will do this till our pointer LEFT < RIGHT, because if not that means that we did not found a pair, to swap
+
 
 if extra space is allowed:
-
 1. 2 Pass method	:	we can create a new array of same size and, then
-						in the first traversal of the original_array, we find all the -ve elements and put
-						(append, if we crated empty array) them to the new_array
-
-						Similarly, for the +ve elements in the next traversal of original_array,
-						we need to add (append) them to the new_array
-
+						in the first traversal of the original_array, we find all the -ve elements and put (append, if we crated empty array) them to the new_array
+						Similarly, for the +ve elements in the next traversal of original_array, we need to add (append) them to the new_array
 
