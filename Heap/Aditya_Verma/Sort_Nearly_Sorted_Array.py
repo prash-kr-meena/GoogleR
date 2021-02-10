@@ -1,6 +1,8 @@
 from Utils.Array import print_array_inline
 from heapq import heapify, heappush, heappop
 
+# Note : Sort a K Sorted Array       OR      Sort Nearly Sorted Array
+
 """
 https://practice.geeksforgeeks.org/problems/nearly-sorted-algorithm/0
 Sort a K Sorted Array       OR      Sort Nearly Sorted Array
