@@ -99,3 +99,5 @@ Learning Stacks from Aditya Verma
 - But for primitive types we would require to either
     1. wrap it in an object and implement `__lt__`
     2. or we can multiply it by -1
+
+* How to traverse a python dictionary
