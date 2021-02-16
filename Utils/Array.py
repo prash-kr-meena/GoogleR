@@ -2,9 +2,8 @@ from typing import List
 
 
 # input an list of space-separated integers <array>
-def input_array(prompt="arr") -> list:
-    print(prompt, end=" : ")
-    return list(map(int, input().strip().split()))
+def input_array(prompt="arr : ") -> list:
+    return list(map(int, input(prompt).strip().split()))
 
 
 # If you don't want space at the end of it

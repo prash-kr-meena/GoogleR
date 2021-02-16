@@ -1,4 +1,4 @@
-from Utils.Array import input_array
+from Utils.Array import input_array, print_array_inline
 from Utils.Map import get_frequencies_in_integer_array
 
 from heapq import heapify, heappop, heappush
@@ -51,7 +51,7 @@ def frequency_sort(nums):
 if __name__ == '__main__':
     array = input_array()
     f_sorted_array = frequency_sort(array)
-    print(f_sorted_array)
+    print_array_inline(f_sorted_array)
 
 """
 2 5 2 8 5 6 8 8 
