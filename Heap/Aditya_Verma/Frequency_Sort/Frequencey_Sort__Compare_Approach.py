@@ -5,7 +5,7 @@ from Utils.Map import get_frequencies_in_integer_array
 Space  : O(unique_elements) for map
 Time   : O(n log n)
             O(n) in building the map of freq
-            O(n log n) for sorting
+            O(n log n) for sorting, as you will be comparing all the elements of the array that you are sorting
 """
 
 

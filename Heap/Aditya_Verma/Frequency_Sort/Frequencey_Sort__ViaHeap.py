@@ -12,7 +12,18 @@ Time   : O(UE    log UE)  * freq
             O(UE log UE) for sorting, the heap as we are pulling out all UE elements from it
             and then inside another for loop, we are going till the freq
             
-        Effectively its O(n log n) 
+        Effectively its a bit smaller then O(n log n)
+        
+        for eg. let there be an input, which is given 9000 times
+        [4, 4, 4, 4, 4, 4, 4, ...... 9k times]
+        
+        now when you create a Map, in O(n) time, that mapi will have only one entry  {4:9000}
+        now you are doing    O(UE    log UE)  * freq    operations
+        ie O(1 log 1) * 9K  => 9k        
+        which is basically O(n) operations
+        
+        While in the comparison method, you would be comparing each and every element
+        ie O(9k  log 9k) operation
 """
 
 
