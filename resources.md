@@ -101,3 +101,13 @@ Learning Stacks from Aditya Verma
     2. or we can multiply it by -1
 
 * How to traverse a python dictionary
+
+### Miscellanies
+
+* [Is `__init__.py` not required for packages in `Python 3.3+`](https://stackoverflow.com/questions/37139786/is-init-py-not-required-for-packages-in-python-3-3)
+
+#### Some Useful Things
+
+* To delete all the **.plantuml** file `find src -type f -name "*.plantuml" -delete`
+* To delete all the **.class** file `find src -type f -name "*.class" -delete`
+* To delete all the **__init__.py** file `find src -type f -name "__init__.py" -delete`
