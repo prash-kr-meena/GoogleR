@@ -11,8 +11,12 @@ Let the two arrays are of size n & m
 Time  : O(K log K)        where k = n+m       because we are soring an array that contains elements of both the array
 Space : O(k)
 
-This same approach can be solved in a little better time complexity, if we don't put all the elements in one big array
-because then we will be having the sorting in     O(n lg n) + O(m lg m)
+This same approach can be applied with a little better time complexity,
+so if we don't put all the elements in one big array then we will be having the sorting in     O(n lg n) + O(m lg m)
+
+Also, then to know if the event is corresponding to the ARRIVAL or DEPARTURE, we would not require to do mapping
+we would know, from the array we are reading, if we are reading from arrivals array it will be an arrival event
+and if we are reading form departure array it will be a departure event 
 """
 
 
