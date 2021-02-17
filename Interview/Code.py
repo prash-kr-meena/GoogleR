@@ -1,7 +1,16 @@
-# You have given N Gamers login and logout time.
-# Find the maximum logged in users at any instance of time.
-# Example: u1 => 1 6, u2 => 3 5, u3=> 2 3
-# Maximum number of users: 3 (at t = 3)
+"""
+You have given N Gamers login and logout time.
+Find the maximum logged in users at any instance of time.
+Example: u1 => 1 6, u2 => 3 5, u3=> 2 3
+Maximum number of users: 3 (at t = 3)
+
+"""
+"""
+    1    2    3    4    5    6
+    u1 --------------------->u1
+              u2------->u2
+        u3--->u3
+"""
 
 
 def find_max_user(pair_list, n, min_login_time, max_logout_time):
@@ -10,7 +19,7 @@ def find_max_user(pair_list, n, min_login_time, max_logout_time):
     prefix_time_arr = [0] * (max_logout_time + 2)
     for pair in pair_list:
         prefix_time_arr[pair[0]] += 1
-        prefix_time_arr[pair[1]+1] -= 1
+        prefix_time_arr[pair[1] + 1] -= 1
 
     # print(prefix_time_arr)
 
