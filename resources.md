@@ -100,7 +100,8 @@ Learning Stacks from Aditya Verma
     1. wrap it in an object and implement `__lt__`
     2. or we can multiply it by -1
 
-* How to traverse a python dictionary
+* [How to traverse a python dictionary](https://www.geeksforgeeks.org/iterate-over-a-dictionary-in-python/)
+* [Ways to concatenate (extend, merge) two list](https://www.geeksforgeeks.org/python-ways-to-concatenate-two-lists/)
 
 ### Miscellanies
 

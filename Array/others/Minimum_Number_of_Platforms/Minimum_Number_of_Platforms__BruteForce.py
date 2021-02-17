@@ -3,11 +3,14 @@ from Utils.Range import range_overlaps
 
 
 # https://www.geeksforgeeks.org/minimum-number-platforms-required-railwaybus-station/
+# Time  : O(n2)
+# Space : O(1)
+def minimum_platforms(arrivals, departures) -> int:
+    time_range = [(arrive, depart) for arrive, depart in zip(arrivals, departures)]
+    n = len(time_range)
 
-def minimum_platforms(time_range):
     max_overlaps = float("-inf")
 
-    n = len(time_range)
     for i in range(n):
         overlaps = 0
         for j in range(i + 1, n):
@@ -21,10 +24,9 @@ def minimum_platforms(time_range):
 
 
 if __name__ == '__main__':
-    arrival = input_array()
-    departure = input_array()
-    arrival_departure = [(arrive, depart) for arrive, depart in zip(arrival, departure)]
-    min_platforms = minimum_platforms(arrival_departure)
+    arrival_times = input_array()
+    departure_times = input_array()
+    min_platforms = minimum_platforms(arrival_times, departure_times)
     print(min_platforms)
 
 """
