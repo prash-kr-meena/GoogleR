@@ -1,4 +1,4 @@
-from Utils.Array import print_array_inline
+from Utils.Array import print_array_inline, input_array
 from heapq import heapify, heappush, heappop
 
 # Note : Sort a K Sorted Array       OR      Sort Nearly Sorted Array
@@ -38,11 +38,6 @@ def sort_nearly_sorted_array(arr, k) -> None:
         sorted_arr.append(curr)
 
     print_array_inline(sorted_arr)
-
-
-# input an list of space-separated integers <array>
-def input_array() -> list:
-    return list(map(int, input().strip().split()))
 
 
 if __name__ == '__main__':

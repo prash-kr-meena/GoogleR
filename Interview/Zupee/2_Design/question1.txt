@@ -1,0 +1,65 @@
+Chrome
+downloader module
+
+
+
+
+
+class PauzeResume {
+  pause()
+   resme()
+}
+
+class DownloadedItesm {
+   int id
+  string uri
+   string path
+   Date downloaded_at
+   long size
+}
+
+class DownloadHistory {
+     stack<DownloadedItesm> downloaded_Items;
+     fetch_all_downloaded_items()   // in a form of stack
+}
+
+class downloadBottomPannel {
+
+     active :  true of false
+     queue<DownloadedItesm>
+     Downloder downloader_module;
+     PauzeResume  pause_resume
+
+
+    isActive()
+     addDownlodToPanel()  : // when panel is active           --> calling     isActive()
+     deacitvateThepannel()  ; // when i click on the show_all button
+
+    open(downloaded_item_id)  // os apis
+    showInFinder(downloaded_item_id)  // os apis
+
+   // on click of pause and resume
+     pa
+}
+
+
+class Downloder {
+
+  downloadBottomPannel
+  DownloadHistory histroy;   // stack
+
+
+    pause(download_id)
+    resume(download_id)
+
+     download(uri, encoding)
+     download(uri, encoding, multiple)
+     download(uri, endding, multiple, compress)
+     download(uri, endding, compress)
+
+     updateDownloadHistory();         // internally called
+     updateDownloadPanel() ;        //  --> addDownlodToPanel
+
+
+     storelocation(data) // using internal os apis  to set the name and location of the file to be stored  --> called by download()
+}

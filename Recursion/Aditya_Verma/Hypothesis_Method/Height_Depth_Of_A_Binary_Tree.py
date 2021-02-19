@@ -1,6 +1,6 @@
 # https://www.geeksforgeeks.org/write-a-c-program-to-find-the-maximum-depth-or-height-of-a-tree/
 
-# Binary 1Tree Node
+# Binary 1GenericTree Node
 class Node:
     def __init__(self, data):  # Constructor
         self.data = data
@@ -8,7 +8,7 @@ class Node:
         self.right = None
 
 
-# My Hypothesis : That my height function will give the height of the 1Tree for that particular Node
+# My Hypothesis : That my height function will give the height of the 1GenericTree for that particular Node
 def height(root) -> int:
     if root is None:
         return 0
