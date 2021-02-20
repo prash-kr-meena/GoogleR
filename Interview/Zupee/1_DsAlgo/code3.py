@@ -1,4 +1,3 @@
-
 """
 There are 3 ants sitting on three corners of a triangle.
 All ants randomly pick a direction and start moving along the edge of the triangle.
@@ -10,4 +9,3 @@ a  b  c
 0  0  1
 
 """
-

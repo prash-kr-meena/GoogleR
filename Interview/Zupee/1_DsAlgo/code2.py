@@ -19,6 +19,7 @@ Explanation: In every step a jump
 is needed so the count of jumps is 10.
 """
 
+
 # [1, 3]
 # Input: arr[] = {1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9}
 

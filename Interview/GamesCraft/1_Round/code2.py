@@ -28,7 +28,7 @@ def mirror(root1, root2) -> None:
     if root1 is None and root2 is None:
         return None
 
-    root1.left =  root2.right
+    root1.left = root2.right
     root1.right = root2.left
 
     mirror(root1.left, root2.right)
