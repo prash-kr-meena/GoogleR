@@ -1,4 +1,5 @@
 from GenericTree import GenericTree
+from Utils.Array import input_array
 
 
 def find_sum_of_all_nodes(root):
@@ -14,7 +15,7 @@ def find_sum_of_all_nodes(root):
 
 
 if __name__ == '__main__':
-    root = GenericTree.input_one_line()
+    root = GenericTree.single_line_input(input_array(""))
     # GenericTree.print_level_order(root)
     print(find_sum_of_all_nodes(root))
 

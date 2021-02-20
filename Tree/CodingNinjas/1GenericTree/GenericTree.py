@@ -65,7 +65,7 @@ class GenericTree:
         return root_node  # The original root, Not modified
 
     @staticmethod
-    def input_one_line() -> GenericTreeNode:
+    def single_line_input(one_line_input) -> GenericTreeNode:
         """
 
                             2
@@ -79,8 +79,7 @@ class GenericTree:
         2 3 3 4 0 2 5 6 2 7 8 0 1 9 0 1 1 0 0 0
         """
         input_pointer = 0
-        one_line_input = input_array("")  # element could denote, node_value, no_of_children
-
+        # one_line_input :: element could denote, node_value, no_of_children
         root_value = one_line_input[input_pointer]  # First element will be root
         input_pointer += 1
         root_node = GenericTreeNode(root_value)
@@ -139,7 +138,7 @@ class GenericTree:
 
 
 if __name__ == '__main__':
-    root = GenericTree.input_one_line()
+    root = GenericTree.single_line_input(input_array(""))
     GenericTree.print_level_order(root)
     # root = GenericTree.input_interactive()
     # GenericTree.print_level_order_detailed(root)
