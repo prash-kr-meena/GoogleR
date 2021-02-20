@@ -1,7 +1,10 @@
 from GenericTree import GenericTree
 
-# Code : Number of nodes greater than x
 from Utils.Array import input_array
+
+"""
+ Code : Number of nodes greater than x
+"""
 
 
 def count_nodes_greater_then_x(root, x) -> int:
@@ -18,7 +21,7 @@ def count_nodes_greater_then_x(root, x) -> int:
 
 
 if __name__ == '__main__':
-    array = input_array()
+    array = input_array("")
     value_x = array[0]
     del array[0]  # Removing the first element of the array, so remaining is the tree input
     tree_node = GenericTree.single_line_input(array)
