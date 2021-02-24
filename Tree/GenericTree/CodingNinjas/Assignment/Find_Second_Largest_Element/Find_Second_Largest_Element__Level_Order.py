@@ -1,41 +1,44 @@
 from collections import deque
 
-from Array.Final450.Find_First_Second__Smallest_n_Largest.Find_First_And_Second_Largest import \
-    find_first_and_second_largest
-from Tree.CodingNinjas.GenericTree.GenericTree import GenericTree, GenericTreeNode
+from Tree.GenericTree.GenericTree import GenericTree, GenericTreeNode
 from Utils.Array import input_array
 
 """
-The idea, here is to traverse the tree and collect all the node's data in one list
-and then apply a pre-written method to solve the problem of finding-2nd-largest
-
+Here instead of calling the predefined method after collecting all elements as list,
+we can embed the logic here only
 
 Two Test Cases Filed : For Output like these
 10 0                Only One Node
 -2147483648     <<  Expected
--inf            <<  Output   
+-inf            <<  Output 
 """
 
 
 # Always first write the level-order traversal, then go for modifying and solving the problem
 def find_2nd_largest_element__extra_space(root: GenericTreeNode) -> int:
     if root is None:
-        return None  # no first or second largest exists
+        return None
 
-    tree_elements = []
+    first_largest = second_largest = float("-inf")
     # --------------------------------------------
     queue = deque()
     queue.append(root)
     while len(queue) != 0:
         curr_root = queue.popleft()
         # print(curr_root.data)     # Printing Level Order
-        tree_elements.append(curr_root.data)
+
+        # Embdding the logic here
+        if curr_root.data > first_largest:
+            second_largest = first_largest
+            first_largest = curr_root.data
+        elif curr_root.data > second_largest and curr_root.data != first_largest:  # handling duplicity
+            second_largest = curr_root.data
+
         for child in curr_root.children:
             queue.append(child)
 
-    # --------------------------------------------
-    first_largest, second_largest = find_first_and_second_largest(tree_elements)
     return second_largest
+    # --------------------------------------------
 
 
 if __name__ == '__main__':

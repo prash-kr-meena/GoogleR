@@ -1,44 +1,41 @@
 from collections import deque
 
-from Tree.CodingNinjas.GenericTree.GenericTree import GenericTree, GenericTreeNode
+from Array.Final450.Find_First_Second__Smallest_n_Largest.Find_First_And_Second_Largest import \
+    find_first_and_second_largest
+from Tree.GenericTree.GenericTree import GenericTree, GenericTreeNode
 from Utils.Array import input_array
 
 """
-Here instead of calling the predefined method after collecting all elements as list,
-we can embed the logic here only
+The idea, here is to traverse the tree and collect all the node's data in one list
+and then apply a pre-written method to solve the problem of finding-2nd-largest
+
 
 Two Test Cases Filed : For Output like these
 10 0                Only One Node
 -2147483648     <<  Expected
--inf            <<  Output 
+-inf            <<  Output   
 """
 
 
 # Always first write the level-order traversal, then go for modifying and solving the problem
 def find_2nd_largest_element__extra_space(root: GenericTreeNode) -> int:
     if root is None:
-        return None
+        return None  # no first or second largest exists
 
-    first_largest = second_largest = float("-inf")
+    tree_elements = []
     # --------------------------------------------
     queue = deque()
     queue.append(root)
     while len(queue) != 0:
         curr_root = queue.popleft()
         # print(curr_root.data)     # Printing Level Order
-
-        # Embdding the logic here
-        if curr_root.data > first_largest:
-            second_largest = first_largest
-            first_largest = curr_root.data
-        elif curr_root.data > second_largest and curr_root.data != first_largest:  # handling duplicity
-            second_largest = curr_root.data
-
+        tree_elements.append(curr_root.data)
         for child in curr_root.children:
             queue.append(child)
 
-    return second_largest
     # --------------------------------------------
+    first_largest, second_largest = find_first_and_second_largest(tree_elements)
+    return second_largest
 
 
 if __name__ == '__main__':

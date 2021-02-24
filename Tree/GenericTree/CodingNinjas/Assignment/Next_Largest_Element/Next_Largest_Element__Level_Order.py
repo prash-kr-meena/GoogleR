@@ -1,6 +1,6 @@
 from collections import deque
 
-from Tree.CodingNinjas.GenericTree.GenericTree import GenericTree, GenericTreeNode
+from Tree.GenericTree.GenericTree import GenericTree, GenericTreeNode
 from Utils.Array import input_array
 
 
