@@ -42,6 +42,9 @@ class GenericTree:
         0
         """
         root_value = int(input("Enter Root : "))
+        if root_value == -1:  # Creating a empty tree - ie None
+            return None
+
         root_node = GenericTreeNode(root_value)
 
         queue = deque()  # push at end, pop from front
@@ -82,6 +85,10 @@ class GenericTree:
         # one_line_input :: element could denote, node_value, no_of_children
         root_value = one_line_input[input_pointer]  # First element will be root
         input_pointer += 1
+
+        if root_value == -1:  # Creating a empty tree - ie None
+            return None
+
         root_node = GenericTreeNode(root_value)
 
         queue = deque()  # push at end, pop from front
