@@ -1,6 +1,6 @@
 from sys import setrecursionlimit
 
-from Utils.Boolean import print_small_boolean
+from Utils.Boolean import print_lowercase_boolean
 
 
 def is_palindrome_i(string):
@@ -42,5 +42,5 @@ if __name__ == '__main__':
     # test_string = "racecar"
     # test_string = "ninja"
     test_string = input()
-    print_small_boolean(is_palindrome_i(test_string))
-    print_small_boolean(is_palindrome_r(test_string))
+    print_lowercase_boolean(is_palindrome_i(test_string))
+    print_lowercase_boolean(is_palindrome_r(test_string))
