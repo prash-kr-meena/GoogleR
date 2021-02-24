@@ -1,0 +1,22 @@
+Given a generic tree, Return the node which has the maximum-sum
+The sum here is defined by (sum_of_node + sum_of_all_children_nodes)
+
+10 3 2 3 4 2 100 200 1 5 1 8 0 0 0 0
+           10
+        /   |  \
+      2     3   4
+    /  \    |    \
+  100  200  5     8
+
+
+for node 10  : sum = 10 + 2 + 3 + 4
+for node 2   : sum = 2 + 100 + 200
+for node 3   : sum = 3 + 5
+for node 4   : sum = 4 + 8
+for node 100 : sum = 100
+for node 200 : sum = 200
+for node 5   : sum = 5
+for node 8   : sum = 8
+
+so the maximum out of all is the Node 2
+with sum = 2 + 100 + 200 => 302
