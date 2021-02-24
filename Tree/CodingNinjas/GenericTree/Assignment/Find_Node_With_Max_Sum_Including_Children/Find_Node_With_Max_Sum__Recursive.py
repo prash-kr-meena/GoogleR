@@ -29,25 +29,24 @@ def find_node_with_max_sum_including_children(root) -> (GenericTreeNode, int):
 
     # Finding total sum for current root's children
     for child in root.children:
-        node_sum_pair = find_node_with_max_sum_including_children(child)
-        if node_sum_pair[1] > max_node_sum:  # get sum
-            max_node = node_sum_pair[0]  # get node
-            max_node_sum = node_sum_pair[1]
+        node, sum_for_this_node = find_node_with_max_sum_including_children(child)
+        if sum_for_this_node > max_node_sum:
+            max_node = node
+            max_node_sum = sum_for_this_node
 
     return max_node, max_node_sum  # tuple (node, sum)
 
 
-def find_node_with_max_sum_including_children_helper(root):
-    pair = find_node_with_max_sum_including_children(root)
-    print("node:", pair[0].data, " | sum : ", pair[1])
-    return pair[0].data  # the node
+def find_node_with_max_sum_including_children_helper(root) -> None:
+    node, sum = find_node_with_max_sum_including_children(root)
+    print("node:", node.data, " | sum : ", sum)
+    return node.data  # the node
 
 
 if __name__ == '__main__':
     array = input_array()
     tree_root = GenericTree.single_line_input(array)
-    node = find_node_with_max_sum_including_children_helper(tree_root)
-    print(node)
+    find_node_with_max_sum_including_children_helper(tree_root)
 
 """
 10 3 2 3 4 2 100 200 1 5 1 8 0 0 0 0
