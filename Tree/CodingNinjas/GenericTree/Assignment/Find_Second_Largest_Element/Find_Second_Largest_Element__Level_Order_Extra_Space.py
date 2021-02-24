@@ -10,9 +10,10 @@ The idea, here is to traverse the tree and collect all the node's data in one li
 and then apply a pre-written method to solve the problem of finding-2nd-largest
 
 
-The reason few of the test cases failed : 
-is because we used the the method `find_first_and_second_largest`which handles duplicity, 
-but this question does not requires that  
+Two Test Cases Filed : For Output like these
+10 0                Only One Node
+-2147483648     <<  Expected
+-inf            <<  Output   
 """
 
 
@@ -34,17 +35,20 @@ def find_2nd_largest_element__extra_space(root: GenericTreeNode) -> int:
 
     # --------------------------------------------
     first_largest, second_largest = find_first_and_second_largest(tree_elements)
-    print(first_largest, second_largest)
     return second_largest
 
 
 if __name__ == '__main__':
     tree_root = GenericTree.single_line_input(input_array(""))
-    GenericTree.print_level_order(tree_root)
     print(find_2nd_largest_element__extra_space(tree_root))
     pass
 
 """
 10 3 20 30 40 2 40 50 0 0 0 0 
 40  << Output
+
+
+10 0                Only One Node
+-2147483648     <<  Expected
+-inf            <<  Output
 """
