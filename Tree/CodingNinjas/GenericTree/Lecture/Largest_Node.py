@@ -1,6 +1,6 @@
 import sys
 
-from GenericTree import GenericTree, GenericTreeNode
+from Tree.CodingNinjas.GenericTree.GenericTree import GenericTree
 from Utils.Array import input_array
 
 

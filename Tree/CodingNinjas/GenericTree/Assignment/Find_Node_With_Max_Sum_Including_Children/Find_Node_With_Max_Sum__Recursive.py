@@ -1,5 +1,4 @@
 from Tree.CodingNinjas.GenericTree.GenericTree import GenericTree, GenericTreeNode
-from collections import deque
 from Utils.Array import input_array
 
 """

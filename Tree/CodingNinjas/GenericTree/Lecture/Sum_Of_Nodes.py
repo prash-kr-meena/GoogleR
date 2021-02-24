@@ -1,4 +1,4 @@
-from GenericTree import GenericTree
+from Tree.CodingNinjas.GenericTree.GenericTree import GenericTree
 from Utils.Array import input_array
 
 
