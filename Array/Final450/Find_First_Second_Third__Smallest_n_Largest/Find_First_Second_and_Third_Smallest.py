@@ -11,34 +11,34 @@ from Utils.Array import input_array
 """
 
 
-def find_first_and_second_smallest(nums):
-    first_smallest = second_smallest = float("inf")
+def find_first_second_and_third_smallest(nums):
+    first_smallest = second_smallest = third_smallest = float("inf")
 
     for n in nums:
         if n < first_smallest:
+            third_smallest = second_smallest
             second_smallest = first_smallest
             first_smallest = n
         elif n < second_smallest and n != first_smallest:  # to handle duplicate cases
+            third_smallest = second_smallest
             second_smallest = n
+        elif n < third_smallest and n != second_smallest and n != first_smallest:
+            third_smallest = n
 
-    if second_smallest == float("inf"):
-        print("There was no second smallest")
-        return first_smallest, None
-    else:
-        return first_smallest, second_smallest
+    return first_smallest, second_smallest, third_smallest
 
 
 if __name__ == "__main__":
-    nums = input_array("List of integer numbers")
-    first, second = find_first_and_second_smallest(nums)
-    print(first, second)
+    array = input_array("List of integer numbers : ")
+    first, second, third = find_first_second_and_third_smallest(array)
+    print(first, second, third)
 
 '''
 ------- Test cases ------- 
 
 12 13 2 11 0 10
-1 2 3 4 5 6 7       VVImp
-7 7 7 7 7 7 7       Imp
+1 2 3 4 5 6 7       Imp
+7 7 7 7 7 7 7       VVImp
 3 2 2 1 1 2 3       v.v.v Imp   basically duplicate first and second smallest   
                     Need special condition otherwise both first and second will be same ie, 1, 1
 

@@ -1,0 +1,69 @@
+
+Given a generic tree, find and return the node with second largest value in given tree.
+Return NULL if no node with required value is present.
+
+Input format :
+    Elements in level order form separated by space (as per done in class).
+    Order is - Root_data, n (No_Of_Child_Of_Root), n children, and so on for every element
+
+Output format:
+    Second Largest node data
+
+NOTE : Issue with the input, first element of the one-line-input is `n`
+
+----------------- My Idea -----------------
+10 3 20 30 40 2 40 50 0 0 0 0
+        10
+     /  |  \
+    20  30  40
+   / \
+  40 50
+
+The Largest Element = 50
+2nd Largest Element = 40 (There are two copies, any one will work)
+3rd Largest Element = 30
+
+
+The idea is very similar to the problems                        {{ Find_First_And_Second_Smallest.py }}
+only thing is instead of smallest, we need to find largest       {{ Find_First_Second_and_Third_Smallest.py }}
+
+Now its a tree, and you might get confused because of it
+but if you think a bit logically, you will be traversing to all the tree-nodes (basically all elements)
+Which you were also doing in the case of Arrays (in above question)
+
+so the logic to get the 2nd or 3rd largest & smallest is still same,
+only hwo we do the traversing has changed
+
+Approaches :
+1.  Doing this with level-order-traversal will be a bit easy for use,
+    as here the traversal will be iterative (instead of recursive)
+    and hence applying the same above logic will be a little more easier
+
+2.  We can do the same in recursive approach as well :
+    The way we can think of is we will have a root and root will be having some children
+    As we need to find the 2nd largest only, we can ask the root's children to get the maximum (from there subtree)
+    and then we will basically store, all of them in an array
+    ie array will be  [root.data,  max_value_from_child1, max_value_from_child2, max_value_from_child3, ... etc]
+
+    and then we can just call the above methods, which on giving an array will return us the 2nd largest
+
+    Now :   if you observe we execute our logic on the basis of the largest_element, from the sub-trees
+            but we need to return the 2nd_largest
+            Hence we need to return a pair, of (largest_of_subtree, 2nd_largest_of_subtree)
+
+            for root it will be : (largest_of_tree, 2nd_largest_of_tree)
+
+Comments on :   Finding 3rd largest in a tree,
+                This can be done both in recursive and iterative (level-order) fashion
+                *   In case of recursive, we would require to return 3 variable tuple from our subtree
+                    and then apply the logic for finding_3rd_largest_element
+                *   In case of level order it will be easy to think, as we will be going to go through all the element
+                    in an iterative fashion, so we will just maintain 3 variables, which we are gonna maintain
+                    for implementing the finding_3rd_largest_element logic
+
+
+NOTE :  If the question doesn't not demand a specific type of traversal, then only do this,
+        because each traversal has a different way to reach to nodes
+
+        Well in this above question we had to traverse the whole tree, and find that one particular node
+        So the type traversal did not matter that much, as we would have to process all the nodes

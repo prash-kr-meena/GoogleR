@@ -107,6 +107,8 @@ Learning Stacks from Aditya Verma
 
 * [Is `__init__.py` not required for packages in `Python 3.3+`](https://stackoverflow.com/questions/37139786/is-init-py-not-required-for-packages-in-python-3-3)
 * [How to access a module from outside your file folder in Python?](https://stackoverflow.com/questions/24868733/how-to-access-a-module-from-outside-your-file-folder-in-python)
+* [Generics/templates in python?](https://stackoverflow.com/questions/6725868/generics-templates-in-python)
+    - It supports from 3.5, check the 2nd answer
 
 #### Some Useful Things
 
