@@ -4,6 +4,9 @@ from Utils.Array import input_array
 
 """
  Code : Number of nodes greater than x
+ 
+ Given a tree and an integer x, find and return number of Nodes which are greater than x.
+ 
 """
 
 
@@ -29,6 +32,9 @@ if __name__ == '__main__':
     print(count)
 
 """
+Single Line : First Integer denotes x and rest of the elements in level order form separated by space. Order is - 
+Root_data, n (No_Of_Child_Of_Root), n children, and so on for every element 
+
 35 10 3 20 30 40 2 40 50 0 0 0 0
 3       << OUTPUT
 
