@@ -1,0 +1,53 @@
+Given a generic tree and an integer n.
+Find and return the node with next larger element in the Tree i.e. find a node with value just greater than n.
+Return NULL if no node is present with value greater than n.
+
+Input format :
+    Line 1 : Integer n
+    Line 2 : Elements in level order form separated by space (as per done in class).
+    Order is - Root_data, n (No_Of_Child_Of_Root), n children, and so on for every element
+
+Output format :
+    Node with value just greater than n.
+
+NOTE : Issue with the input, first element of the one-line-input is `n`
+
+----------------- My Idea -----------------
+So the idea is to find a node, with such data that
+the data (basically number) is greater then the n (that we got input)
+and we would need to choose the one who has the minimum difference, when we do  { data-n }
+        10
+     /  |  \
+    20  30  40
+   / \
+  40 50
+
+if n = 18, the answer should be 20
+
+as 20 is greater then 18, and has the minimum difference ie 2
+
+eg. 30-18 = 12
+    40-18 = 22
+    50-18 = 32
+    20-18 = 2
+
+
+to do this we would require two values at a point, the difference (which we need to minimize)
+and the actual value of node (ie data) because we need to return that
+
+
+Approaches :
+1.  We can do this recursive-traversal and get a pair of both the elements and the difference
+2.  We can do this via level-order-traversal
+
+In my opinion :
+Scenarios where you need to have multiple value, to compute the result, Level-Order-Traversal is a bit easier to do
+then the recursive approach
+
+NOTE :  If the question doesn't not demand a specific type of traversal, then only do this,
+        because each traversal has a different way to reach to nodes
+
+        Well in this above question we had to traverse the whole tree, and find that one particular node
+        So the type traversal did not matter that much, as we would have to process all the nodes
+
+
