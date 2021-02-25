@@ -133,6 +133,61 @@ class BinaryTree:
                 window_size -= 1  # decrementing window
             print()  # after window size is over
 
+    @staticmethod
+    def display_aux(root_node):
+        """
+        Returns list of strings, width, height, and horizontal coordinate of the root.
+        """
+
+        # No child.
+        if root_node.right is None and root_node.left is None:
+            line = '%s' % root_node.data
+            width = len(line)
+            height = 1
+            middle = width // 2
+            return [line], width, height, middle
+
+        # Only left child.
+        if root_node.right is None:
+            lines, n, p, x = BinaryTree.display_aux(root_node.left)
+            s = '%s' % root_node.data
+            u = len(s)
+            first_line = (x + 1) * ' ' + (n - x - 1) * '_' + s
+            second_line = x * ' ' + '/' + (n - x - 1 + u) * ' '
+            shifted_lines = [line + u * ' ' for line in lines]
+            return [first_line, second_line] + shifted_lines, n + u, p + 2, n + u // 2
+
+        # Only right child.
+        if root_node.left is None:
+            lines, n, p, x = BinaryTree.display_aux(root_node.right)
+            s = '%s' % root_node.data
+            u = len(s)
+            first_line = s + x * '_' + (n - x) * ' '
+            second_line = (u + x) * ' ' + '\\' + (n - x - 1) * ' '
+            shifted_lines = [u * ' ' + line for line in lines]
+            return [first_line, second_line] + shifted_lines, n + u, p + 2, u // 2
+
+        # Two children.
+        left, n, p, x = BinaryTree.display_aux(root_node.left)
+        right, m, q, y = BinaryTree.display_aux(root_node.right)
+        s = '%s' % root_node.data
+        u = len(s)
+        first_line = (x + 1) * ' ' + (n - x - 1) * '_' + s + y * '_' + (m - y) * ' '
+        second_line = x * ' ' + '/' + (n - x - 1 + u + y) * ' ' + '\\' + (m - y - 1) * ' '
+        if p < q:
+            left += [n * ' '] * (q - p)
+        elif q < p:
+            right += [m * ' '] * (p - q)
+        zipped_lines = zip(left, right)
+        lines = [first_line, second_line] + [a + u * ' ' + b for a, b in zipped_lines]
+        return lines, n + m + u, max(p, q) + 2, n + u // 2
+
+    @staticmethod
+    def display(root_node):
+        lines, *_ = BinaryTree.display_aux(root_node)
+        for line in lines:
+            print(line)
+
 
 if __name__ == '__main__':
     # tree_root = BinaryTree.input_interactive()
@@ -140,6 +195,7 @@ if __name__ == '__main__':
 
     tree_root = BinaryTree.single_line_input(input_array(""))
     BinaryTree.print_level_order(tree_root)
+    BinaryTree.display(tree_root)
 
 """ 
 2 3 4 5 6 7 8 9 -1 -1 -1 -1 -1 -1 1 -1 -1 -1 -1
