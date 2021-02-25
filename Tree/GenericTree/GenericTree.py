@@ -15,22 +15,13 @@ class GenericTree:
     @staticmethod
     def input_interactive() -> GenericTreeNode:
         """
-
-                            2
-                         /  |  \
-                       /    |    \
-                     /      |     \
-                   3        4        0
-                 5  6     7  8
-                9        1
-
-        2
-        3
-        3 4 0
-        2
-        5 6
-        2
-        7 8
+        2                              2
+        3                           /  |  \
+        3 4 0                     /    |    \
+        2                       /      |     \
+        5 6                   3        4        0
+        2                   5  6     7  8
+        7 8                9        1
         0
         1
         9
