@@ -34,3 +34,75 @@ I have asked in the range of 23-25 from them
     - by creating two ojbects and checking there equality
 
 """
+
+"""
+# --------------- Java Code I Wrote ---------------
+
+package com.company;
+
+public class Animal {
+
+  private String name;
+  private Integer age;
+
+  public Animal(String name, Integer age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  // equals and hashcode
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
+      return false;
+    }
+
+    if (!(obj instanceof Animal)) {
+      return false;
+    }
+
+    Animal animal = (Animal) obj;
+    return animal.name.equals(this.name) && animal.age.equals(this.age);
+  }
+
+  @Override
+  public int hashCode() {
+    int hash = 1;
+    int prime = 31;
+    char[] chars = this.name.toCharArray();
+
+    int upperPower = age;
+    int power = 1;
+    for (char ch : chars) {
+      hash += ch * Math.pow(prime, power);
+      if (power == upperPower) {
+        power = 1;
+      }
+      power++;
+    }
+
+    return hash;
+  }
+
+  @Override
+  public String toString() {
+    return "Animal{" +
+        "name='" + name + '\'' +
+        ", age=" + age +
+        '}';
+  }
+
+  public static void main(String[] args) {
+    Animal animal_1 = new Animal("dog", 2);
+    Animal animal_2 = new Animal("dog", 2);
+
+    System.out.println(animal_1.equals(animal_2));
+    System.out.println(animal_1 + " -- " + animal_2);
+
+    animal_2.age = 3;
+    System.out.println(animal_2);
+    System.out.println(animal_1);
+  }
+}
+"""
