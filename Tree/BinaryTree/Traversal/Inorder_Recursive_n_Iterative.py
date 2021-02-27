@@ -17,43 +17,31 @@ def do_inorder_traversal(root) -> None:
     do_inorder_traversal(root.right)
 
 
-"""
-We have 3 states, for each of the node
-we initialize the state with 0, as starting
-
-  In case of Inorder they will be
-    0 = Processing
-    1 = Going in one direction
-    2 = Going in another direction
-    3 = Done All processing, we can safely pop it out
-"""
-
-
-def do_inorder_traversal_iteratively(root_node):
-    stack = []  # using list as stack, ie, append(), pop(), stack[-1], len(stack)
-    stack.append((root_node, 0))  # pushing a pair of (node, its_state)
+def do_inorder_traversal_iteratively(root) -> None:
+    stack = []
+    stack.append((root, 0))
 
     while len(stack) != 0:
         curr_root, curr_root_state = stack.pop()
 
+        if curr_root is None or curr_root_state == 3:
+            continue
+
+        stack.append((curr_root, curr_root_state + 1))
+
         if curr_root_state == 0:
-            # process node : as inorder
-            pass
+            stack.append((curr_root.left, 0))
         elif curr_root_state == 1:
-            # go left : as inorder
-            pass
+            print(curr_root.data, end=" ")
         elif curr_root_state == 2:
-            # go right : as inorder
-            pass
-        else:
-            pass
-    pass
+            stack.append((curr_root.right, 0))
 
 
 if __name__ == '__main__':
     tree_root = BinaryTree.single_line_input(input_array(""))
     BinaryTree.display(tree_root)
     do_inorder_traversal(tree_root)
+    print()
     do_inorder_traversal_iteratively(tree_root)
 
 """
