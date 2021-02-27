@@ -37,14 +37,14 @@ class BinaryTree:
         while len(queue) != 0:  # queue is not empty
             curr_root = queue.popleft()
 
-            print(curr_root.data, "'s left child : ", end="")
+            print(f"{curr_root.data}'s left child : ", end="")
             left_child_value = int(input())
             if left_child_value != -1:
                 left_child_node = BinaryTreeNode(left_child_value)
                 curr_root.left = left_child_node
                 queue.append(left_child_node)
 
-            print(curr_root.data + "'s right child : ", end="")
+            print(f"{curr_root.data}'s right child : ", end="")
             right_child_value = int(input())
             if right_child_value != -1:
                 right_child_node = BinaryTreeNode(right_child_value)
