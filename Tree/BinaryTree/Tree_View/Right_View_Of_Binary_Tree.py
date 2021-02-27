@@ -3,6 +3,12 @@ from collections import deque
 from Tree.BinaryTree.BinaryTree import BinaryTree
 from Utils.Array import input_array
 
+"""
+https://www.geeksforgeeks.org/print-right-view-binary-tree-2/
+Iterative - Level Order Traversal
+Recursive - Pre Order Traversal > Going Right before Left
+"""
+
 
 def right_view_of_binary_tree(root):
     queue = deque()
