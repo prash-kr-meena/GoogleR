@@ -187,6 +187,7 @@ class BinaryTree:
         lines, *_ = BinaryTree.display_aux(root_node)
         for line in lines:
             print(line)
+        print("`````````````````````")
 
 
 if __name__ == '__main__':

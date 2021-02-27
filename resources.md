@@ -27,6 +27,57 @@ Learning Stacks from Aditya Verma
 * **TOP/PEEK**  `list[-1]`         Get last element
 * **SIZE**  `len(list)`            Get the size
 
+#### Time complexities of python data-structures
+
+* [list, collections.deque, dict, set](https://wiki.python.org/moin/TimeComplexity)
+
+###### Dictionary
+
+* Dictionary & Ordered Dictionary
+    - Insertion : `O(1)`
+    - Deletion : `O(1)`
+    - Get : `O(1)`
+
+* Ordered Dictionary : It is not sorted, it like `LinkedHashMap` of java <br>
+  ie, it remembers the order of insertion
+    - It's not like the `TreeMap` which is sorted on the basis of keys
+      *`TreeMap` has `O(log n)` insertion, get and delete
+        - [Complexity of Treemap insertion vs HashMap insertion](https://stackoverflow.com/questions/20487619/complexity-of-treemap-insertion-vs-hashmap-insertion)
+* [OrderedDict performance (compared to deque)](https://stackoverflow.com/questions/8176513/ordereddict-performance-compared-to-deque)
+    - Ordered Dictionary, now has C implementation Post Python 3.5
+    - Regular dictionaries has been ordered (though the ordering behavior is not yet guaranteed) Post Python 3.6
+* [Difference between TreeMap, HashMap, and LinkedHashMap in Java - There Time Complexities](https://www.tutorialspoint.com/Difference-between-TreeMap-HashMap-and-LinkedHashMap-in-Java)
+* Do you need a data-structure like `TreeMap` in python??
+    - It would be good if you had one, but you can do the same thing with a normal dictionary (map) as well
+    - If you are adding n nodes, to a `TreeMap` and each operation takes O(log n) time, then you are doing `O(n lg n)`
+      time only
+    - Ie, and you will get the same time-complexity if you have a dictionary (map) with n values and then you sort the
+      dictionary on its keys, which will take `O(n lg n)`
+    - Note : that you can't directly sort a dictionary, `sorted(dictionary)` will return the keys in sorted order, so
+      you can loop over the dictionary with these sorted key
+        ```
+        mydict = {'carl':40,
+                  'alan':2,
+                  'bob':1,
+                  'danny':3}
+        
+        for key in sorted(mydict):
+            print "%s: %s" % (key, mydict[key])
+      
+      
+      
+        Output : 
+            alan: 2
+            bob: 1
+            carl: 40
+            danny: 3      
+        ```
+* Gotchas
+    - **Note** : that the restriction with keys in Python dictionary is only immutable data types can be used as keys,
+      which means we cannot use a dictionary of list as a key.-
+    - `dictionary.get(KEY)` method return None if key is not present in dictionary
+    - Where as, `dictionary[KEY]`  returns exception if key is not present in dictionary
+
 ## Python Resources
 
 * [Why Pycharm showing warning about **"Shadows name xyz from outer
