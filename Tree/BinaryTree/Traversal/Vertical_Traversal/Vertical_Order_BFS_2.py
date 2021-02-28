@@ -112,12 +112,11 @@ Output
 4
 2
 1 5
-8 3       <<  Note this order       Its Not correct, should be [3 8]
+3 8       <<  Note this order       Its correct now
 6
+"""
 
-
-
-
+"""
  __1__
 /     \
 2_     6
@@ -142,4 +141,23 @@ Then our solution will not work
 
 This what the requirement in the leet-code question is : 
 https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/
+"""
+
+"""
+       1
+    /     \
+   2       3
+ /  \    /  \
+4    5  6    7
+
+1 2 3 4 5 6 7 -1 -1 -1 -1 -1 -1 -1 -1
+
+Vertical Order
+4
+2
+1 5 6
+3
+7
+
+
 """
