@@ -68,4 +68,32 @@ Output
 1 5
 8 3       <<  Note this order       Its Not correct, should be [3 8]
 6
+
+
+
+
+ __1__
+/     \
+2_     6
+  \   /
+  7_ 3
+ /  \
+ 4  5
+   /
+   8   
+
+1 2 6 -1 7 3 -1 4 5 -1 -1 -1 -1 8 -1 -1 -1
+
+2 4
+1 7 3 8        <<< The order is correct here, 7 3 are on same level and are printed from left to right,  
+6 5                                           as we are doing level order traversal
+
+
+But if the requirement of the question is, that for elements on the same level, you need to print them in sorted order
+ie, it should be [1 3 7 8]  instead of [1 7 3 8] 
+
+Then our solution will not work
+
+This what the requirement in the leet-code question is : 
+https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/
 """
