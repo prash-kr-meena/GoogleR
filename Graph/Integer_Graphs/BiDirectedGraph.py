@@ -16,18 +16,21 @@ class BiDirectedGraph:
 
         self.edge_pairs: list[tuple] = []  # list of edge pairs
         self.adj_matrix = get_filled_matrix(self.vertices + 1, self.vertices + 1, BiDirectedGraph.NOT_CONNECTED)
-        # we are adding 2 extra, row & columns, so that we can work easily with 0 based graph as well as 1 based graphs
 
         for i in range(self.edges):
             edge_from, edge_to = map(int, input().strip().split())
             self.edge_pairs.append((edge_from, edge_to))
             self.adj_matrix[edge_from][edge_to] = BiDirectedGraph.CONNECTED
-            self.adj_matrix[edge_to][edge_from] = BiDirectedGraph.CONNECTED  # making bi-directed-graphs
+            self.adj_matrix[edge_to][edge_from] = BiDirectedGraph.CONNECTED  # making bi-directional
 
     def draw(self):
         graph = nx.Graph()
         graph.add_edges_from(self.edge_pairs)
-        nx.draw_networkx(graph)
+        pos = nx.spring_layout(graph)
+        plt.figure()
+        nx.draw_networkx(graph, pos, edge_color='black', width=2, linewidths=4,
+                         node_size=500, node_color='pink', alpha=1)
+        plt.axis('off')
         plt.show()
 
     def print_depth_first(self):
@@ -40,6 +43,7 @@ class BiDirectedGraph:
         for vertex, status in enumerate(visited):
             if status == BiDirectedGraph.UN_VISITED:
                 self._print_dfs(vertex, visited)
+        print()
 
     def _print_dfs(self, start_vertex, visited: list):
         n = len(self.adj_matrix)
@@ -61,7 +65,7 @@ class BiDirectedGraph:
 
 if __name__ == '__main__':
     undirected_graph = BiDirectedGraph()
-    print_matrix(undirected_graph.adj_matrix)
+    # print_matrix(undirected_graph.adj_matrix)
     undirected_graph.print_depth_first()
     undirected_graph.draw()
 

@@ -160,6 +160,7 @@ Learning Stacks from Aditya Verma
 * [How to access a module from outside your file folder in Python?](https://stackoverflow.com/questions/24868733/how-to-access-a-module-from-outside-your-file-folder-in-python)
 * [Generics/templates in python?](https://stackoverflow.com/questions/6725868/generics-templates-in-python)
     - It supports from 3.5, check the 2nd answer
+* [how to draw directed graphs using networkx in python?](https://stackoverflow.com/questions/20133479/how-to-draw-directed-graphs-using-networkx-in-python)
 
 #### Some Useful Things
 

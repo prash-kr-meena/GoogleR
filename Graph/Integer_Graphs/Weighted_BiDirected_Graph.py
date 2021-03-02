@@ -14,22 +14,29 @@ class BiDirectedGraph:
         self.vertices = int(input("V : "))  # No of Vertices
         self.edges = int(input("E : "))  # # No of Edges
 
-        self.edge_pairs: list[tuple] = []  # list of edge pairs
+        self.edge_pairs: list[tuple] = []  # list of edge pairs (from, to, weight)
         self.adj_matrix = get_filled_matrix(self.vertices + 1, self.vertices + 1, BiDirectedGraph.NOT_CONNECTED)
-        # we are adding 2 extra, row & columns, so that we can work easily with 0 based graph as well as 1 based graphs
 
         for i in range(self.edges):
-            edge_from, edge_to = map(int, input().strip().split())
-            self.edge_pairs.append((edge_from, edge_to))
-            self.adj_matrix[edge_from][edge_to] = BiDirectedGraph.CONNECTED  # making uni-directional ONLY_CHANGE Notice
+            edge_from, edge_to, edge_weight = map(int, input().strip().split())
+            self.edge_pairs.append((edge_from, edge_to, edge_weight))
+            self.adj_matrix[edge_from][edge_to] = BiDirectedGraph.CONNECTED
+            self.adj_matrix[edge_to][edge_from] = BiDirectedGraph.CONNECTED  # making Bi-directional ONLY_CHANGE Notice
 
     def draw(self):
-        graph = nx.DiGraph()
-        graph.add_edges_from(self.edge_pairs)
+        graph = nx.Graph()
+
+        only_edges = [(edge_from, edge_to) for edge_from, edge_to, weight in self.edge_pairs]
+        graph.add_edges_from(only_edges)
+
         pos = nx.spring_layout(graph)
         plt.figure()
         nx.draw_networkx(graph, pos, edge_color='black', width=2, linewidths=4,
                          node_size=500, node_color='pink', alpha=1)
+        # create edge label
+        labels = {edge: pair[2] for edge, pair in zip(only_edges, self.edge_pairs)}
+        # Draw edge labels according to node positions
+        nx.draw_networkx_edge_labels(graph, pos, edge_labels=labels)
         plt.axis('off')
         plt.show()
 
@@ -65,25 +72,25 @@ class BiDirectedGraph:
 
 if __name__ == '__main__':
     undirected_graph = BiDirectedGraph()
-    # print_matrix(undirected_graph.adj_matrix)
+    print_matrix(undirected_graph.adj_matrix)
     undirected_graph.print_depth_first()
     undirected_graph.draw()
 
 """
-    2 <--- 1 ---> 3
+    2 --9--  1 --0-- 3
 
 3
 2
-1 2
-1 3
+1 2 9
+1 3 1
 """
 
 """
-    2 <--- 1 ---> 3           4 <-- 5
+    2 --9--  1  --0-- 3           4 --88-- 5
 
 5
 3
-1 2
-1 3
-4 5
+1 2 9
+1 3 1
+4 5 88
 """
