@@ -4,7 +4,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 
-class BiDirectedGraph:
+class WeightedBiDirectedGraph:
     CONNECTED = 1
     NOT_CONNECTED = 0
     VISITED = True
@@ -15,13 +15,13 @@ class BiDirectedGraph:
         self.edges = int(input("E : "))  # # No of Edges
 
         self.edge_pairs: list[tuple] = []  # list of edge pairs (from, to, weight)
-        self.adj_matrix = get_filled_matrix(self.vertices + 1, self.vertices + 1, BiDirectedGraph.NOT_CONNECTED)
+        self.adj_matrix = get_filled_matrix(self.vertices + 1, self.vertices + 1, WeightedBiDirectedGraph.NOT_CONNECTED)
 
         for i in range(self.edges):
             edge_from, edge_to, edge_weight = map(int, input().strip().split())
             self.edge_pairs.append((edge_from, edge_to, edge_weight))
-            self.adj_matrix[edge_from][edge_to] = BiDirectedGraph.CONNECTED
-            self.adj_matrix[edge_to][edge_from] = BiDirectedGraph.CONNECTED  # making Bi-directional ONLY_CHANGE Notice
+            self.adj_matrix[edge_from][edge_to] = WeightedBiDirectedGraph.CONNECTED
+            self.adj_matrix[edge_to][edge_from] = WeightedBiDirectedGraph.CONNECTED  # making Bi-directional ONLY_CHANGE Notice
 
     def draw(self):
         graph = nx.Graph()
@@ -45,10 +45,10 @@ class BiDirectedGraph:
         n = len(self.adj_matrix)
 
         # Notice : To handle dis-connected components : make sure to visit every node
-        visited = [BiDirectedGraph.UN_VISITED] * n  # Array : to check if already visited in O(1)
+        visited = [WeightedBiDirectedGraph.UN_VISITED] * n  # Array : to check if already visited in O(1)
 
         for vertex, status in enumerate(visited):
-            if status == BiDirectedGraph.UN_VISITED:
+            if status == WeightedBiDirectedGraph.UN_VISITED:
                 self._print_dfs(vertex, visited)
         print()
 
@@ -56,11 +56,11 @@ class BiDirectedGraph:
         n = len(self.adj_matrix)
 
         print(start_vertex, end=" ")
-        visited[start_vertex] = BiDirectedGraph.VISITED  # marking visited
+        visited[start_vertex] = WeightedBiDirectedGraph.VISITED  # marking visited
 
         for i in range(n):
             for j in range(n):
-                if self.adj_matrix[i][j] == BiDirectedGraph.CONNECTED and visited[j] == BiDirectedGraph.UN_VISITED:
+                if self.adj_matrix[i][j] == WeightedBiDirectedGraph.CONNECTED and visited[j] == WeightedBiDirectedGraph.UN_VISITED:
                     # vertex i & j are connected and vertex j is not visited
                     self._print_dfs(j, visited)
                 # else : continue
@@ -71,7 +71,7 @@ class BiDirectedGraph:
 
 
 if __name__ == '__main__':
-    undirected_graph = BiDirectedGraph()
+    undirected_graph = WeightedBiDirectedGraph()
     print_matrix(undirected_graph.adj_matrix)
     undirected_graph.print_depth_first()
     undirected_graph.draw()
