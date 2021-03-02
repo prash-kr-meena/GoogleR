@@ -13,7 +13,7 @@ Now, note that this vertical line starts from the top and goes to bottom directi
 
 So, to get the top view of the tree
 we need to print first_element from the list of elements_in_vertical_line
-with the horizontal distance in sorted ord
+with the horizontal distance in sorted order
 
 We can get rid of sorting, (n lg n) by doing a simple liner search to find the min_hd and max_hd
 as we have done in the  Vertical_Order_BFS_Optimized_3.py
@@ -105,5 +105,5 @@ Vertical Order
 7
 
 Top View
-4 2 1 3 7 
+40 20 10 30 100
 """
