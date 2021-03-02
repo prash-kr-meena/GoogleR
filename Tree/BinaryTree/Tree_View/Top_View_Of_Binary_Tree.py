@@ -1,7 +1,7 @@
 from typing import Dict
 
 from Tree.BinaryTree.BinaryTree import BinaryTree
-from Tree.BinaryTree.Traversal.Vertical_Traversal.Vertical_Order_BFS_2 import finding_x_for_each_node__level_order
+from Tree.BinaryTree.Traversal.Vertical_Order_Traversal.Vertical_Order_BFS_2 import finding_x_for_each_node__level_order
 from Utils.Array import input_array, print_array_inline
 
 """
@@ -16,7 +16,13 @@ we need to print first_element from the list of elements_in_vertical_line
 with the horizontal distance in sorted ord
 
 We can get rid of sorting, (n lg n) by doing a simple liner search to find the min_hd and max_hd
-as we have done in the  Vertical_Order_BFS_Optimized_3.py 
+as we have done in the  Vertical_Order_BFS_Optimized_3.py
+
+
+https://www.geeksforgeeks.org/print-nodes-top-view-binary-tree/
+https://www.geeksforgeeks.org/print-nodes-in-top-view-of-binary-tree-set-2/
+https://www.geeksforgeeks.org/print-nodes-in-the-top-view-of-binary-tree-set-3/?ref=rp
+ 
 """
 
 

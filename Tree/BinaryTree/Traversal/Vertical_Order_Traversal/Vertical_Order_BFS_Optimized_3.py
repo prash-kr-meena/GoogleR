@@ -1,7 +1,7 @@
 from collections import deque
 from typing import Dict
 from Tree.BinaryTree.BinaryTree import BinaryTree, BinaryTreeNode
-from Tree.BinaryTree.Traversal.Vertical_Traversal.Vertical_Order_BFS_2 import finding_x_for_each_node__level_order
+from Tree.BinaryTree.Traversal.Vertical_Order_Traversal.Vertical_Order_BFS_2 import finding_x_for_each_node__level_order
 from Utils.Array import input_array, print_array_multiline, print_array_inline
 
 """
