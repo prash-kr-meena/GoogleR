@@ -21,24 +21,7 @@ class WeightedBiDirectedGraph:
             edge_from, edge_to, edge_weight = map(int, input().strip().split())
             self.edge_pairs.append((edge_from, edge_to, edge_weight))
             self.adj_matrix[edge_from][edge_to] = WeightedBiDirectedGraph.CONNECTED
-            self.adj_matrix[edge_to][edge_from] = WeightedBiDirectedGraph.CONNECTED  # making Bi-directional ONLY_CHANGE Notice
-
-    def draw(self):
-        graph = nx.Graph()
-
-        only_edges = [(edge_from, edge_to) for edge_from, edge_to, weight in self.edge_pairs]
-        graph.add_edges_from(only_edges)
-
-        pos = nx.spring_layout(graph)
-        plt.figure()
-        nx.draw_networkx(graph, pos, edge_color='black', width=2, linewidths=4,
-                         node_size=500, node_color='pink', alpha=1)
-        # create edge label
-        labels = {edge: pair[2] for edge, pair in zip(only_edges, self.edge_pairs)}
-        # Draw edge labels according to node positions
-        nx.draw_networkx_edge_labels(graph, pos, edge_labels=labels)
-        plt.axis('off')
-        plt.show()
+            self.adj_matrix[edge_to][edge_from] = WeightedBiDirectedGraph.CONNECTED  # Bi-directional Notice
 
     def print_depth_first(self):
         print("\nPrint DFS : ")
@@ -60,7 +43,8 @@ class WeightedBiDirectedGraph:
 
         for i in range(n):
             for j in range(n):
-                if self.adj_matrix[i][j] == WeightedBiDirectedGraph.CONNECTED and visited[j] == WeightedBiDirectedGraph.UN_VISITED:
+                if self.adj_matrix[i][j] == WeightedBiDirectedGraph.CONNECTED \
+                        and visited[j] == WeightedBiDirectedGraph.UN_VISITED:
                     # vertex i & j are connected and vertex j is not visited
                     self._print_dfs(j, visited)
                 # else : continue
@@ -68,6 +52,23 @@ class WeightedBiDirectedGraph:
     def print_breadth_first(self):
         print("\nPrint BFS : ")
         pass
+
+    def draw(self):
+        graph = nx.Graph()
+
+        only_edges = [(edge_from, edge_to) for edge_from, edge_to, weight in self.edge_pairs]
+        graph.add_edges_from(only_edges)
+
+        pos = nx.spring_layout(graph)
+        plt.figure()
+        nx.draw_networkx(graph, pos, edge_color='black', width=2, linewidths=4,
+                         node_size=500, node_color='pink', alpha=1)
+        # create edge label
+        labels = {edge: pair[2] for edge, pair in zip(only_edges, self.edge_pairs)}
+        # Draw edge labels according to node positions
+        nx.draw_networkx_edge_labels(graph, pos, edge_labels=labels)
+        plt.axis('off')
+        plt.show()
 
 
 if __name__ == '__main__':

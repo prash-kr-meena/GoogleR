@@ -21,17 +21,7 @@ class UniDirectedGraph:
         for i in range(self.edges):
             edge_from, edge_to = map(int, input().strip().split())
             self.edge_pairs.append((edge_from, edge_to))
-            self.adj_matrix[edge_from][edge_to] = UniDirectedGraph.CONNECTED  # making uni-directional ONLY_CHANGE Notice
-
-    def draw(self):
-        graph = nx.DiGraph()
-        graph.add_edges_from(self.edge_pairs)
-        pos = nx.spring_layout(graph)
-        plt.figure()
-        nx.draw_networkx(graph, pos, edge_color='black', width=2, linewidths=4,
-                         node_size=500, node_color='pink', alpha=1)
-        plt.axis('off')
-        plt.show()
+            self.adj_matrix[edge_from][edge_to] = UniDirectedGraph.CONNECTED  # uni-directional  Notice
 
     def print_depth_first(self):
         print("\nPrint DFS : ")
@@ -61,6 +51,16 @@ class UniDirectedGraph:
     def print_breadth_first(self):
         print("\nPrint BFS : ")
         pass
+
+    def draw(self):
+        graph = nx.DiGraph()
+        graph.add_edges_from(self.edge_pairs)
+        pos = nx.spring_layout(graph)
+        plt.figure()
+        nx.draw_networkx(graph, pos, edge_color='black', width=2, linewidths=4,
+                         node_size=500, node_color='pink', alpha=1)
+        plt.axis('off')
+        plt.show()
 
 
 if __name__ == '__main__':
