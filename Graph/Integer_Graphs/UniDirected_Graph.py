@@ -1,3 +1,5 @@
+from collections import deque
+
 from Utils.Matrix import get_filled_matrix, print_matrix
 # First networkx library is imported along with matplotlib
 import networkx as nx
@@ -50,7 +52,37 @@ class UniDirectedGraph:
 
     def print_breadth_first(self):
         print("\nPrint BFS : ")
-        pass
+        n = len(self.adj_matrix)
+
+        visited = [UniDirectedGraph.UN_VISITED] * n  # boolean array
+
+        for vertex, status in enumerate(visited):
+            if status == UniDirectedGraph.UN_VISITED:
+                self._print_bfs(vertex, visited)
+        print()
+
+    def _print_bfs(self, vertex, visited):
+        n = len(self.adj_matrix)
+
+        queue = deque()
+        queue.append(vertex)
+        visited[vertex] = UniDirectedGraph.VISITED  # marking visited
+
+        while len(queue) != 0:
+            vertex_i = queue.popleft()
+
+            print(vertex_i, end=" ")  # process
+
+            for vertex_j in range(n):
+                if self.adj_matrix[vertex_i][vertex_j] == UniDirectedGraph.CONNECTED \
+                        and visited[vertex_j] == UniDirectedGraph.UN_VISITED:
+                    # two vertices are adjacent, and not visited, so put all into queue to process later
+                    queue.append(vertex_j)
+                    visited[vertex_j] = UniDirectedGraph.VISITED
+
+                    # to handle case, when the vertex is in queue, and you did not mark it visited and another vertex
+                    # that you took out was connected to the one present in the queue, so it got pushed multiple times
+                    # so when you push it to the queue mark it as visited, so no duplicates will appear in the queue
 
     def draw(self):
         graph = nx.DiGraph()
@@ -64,10 +96,11 @@ class UniDirectedGraph:
 
 
 if __name__ == '__main__':
-    undirected_graph = UniDirectedGraph()
+    uni_directed_graph = UniDirectedGraph()
     # print_matrix(undirected_graph.adj_matrix)
-    undirected_graph.print_depth_first()
-    undirected_graph.draw()
+    uni_directed_graph.print_depth_first()
+    uni_directed_graph.print_breadth_first()
+    uni_directed_graph.draw()
 
 """
     2 <--- 1 ---> 3
@@ -86,4 +119,17 @@ if __name__ == '__main__':
 1 2
 1 3
 4 5
+"""
+
+"""
+6
+8
+0 1
+1 3
+3 5
+1 4
+4 5
+0 2
+2 6
+5 6
 """

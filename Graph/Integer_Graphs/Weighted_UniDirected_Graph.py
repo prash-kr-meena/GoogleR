@@ -1,3 +1,5 @@
+from collections import deque
+
 from Utils.Matrix import get_filled_matrix, print_matrix
 # First networkx library is imported along with matplotlib
 import networkx as nx
@@ -51,7 +53,37 @@ class WeightedUniDirectedGraph:
 
     def print_breadth_first(self):
         print("\nPrint BFS : ")
-        pass
+        n = len(self.adj_matrix)
+
+        visited = [WeightedUniDirectedGraph.UN_VISITED] * n  # boolean array
+
+        for vertex, status in enumerate(visited):
+            if status == WeightedUniDirectedGraph.UN_VISITED:
+                self._print_bfs(vertex, visited)
+        print()
+
+    def _print_bfs(self, vertex, visited):
+        n = len(self.adj_matrix)
+
+        queue = deque()
+        queue.append(vertex)
+        visited[vertex] = WeightedUniDirectedGraph.VISITED  # marking visited
+
+        while len(queue) != 0:
+            vertex_i = queue.popleft()
+
+            print(vertex_i, end=" ")  # process
+
+            for vertex_j in range(n):
+                if self.adj_matrix[vertex_i][vertex_j] == WeightedUniDirectedGraph.CONNECTED \
+                        and visited[vertex_j] == WeightedUniDirectedGraph.UN_VISITED:
+                    # two vertices are adjacent, and not visited, so put all into queue to process later
+                    queue.append(vertex_j)
+                    visited[vertex_j] = WeightedUniDirectedGraph.VISITED
+
+                    # to handle case, when the vertex is in queue, and you did not mark it visited and another vertex
+                    # that you took out was connected to the one present in the queue, so it got pushed multiple times
+                    # so when you push it to the queue mark it as visited, so no duplicates will appear in the queue
 
     def draw(self):
         graph = nx.DiGraph()
@@ -72,10 +104,11 @@ class WeightedUniDirectedGraph:
 
 
 if __name__ == '__main__':
-    undirected_graph = WeightedUniDirectedGraph()
-    print_matrix(undirected_graph.adj_matrix)
-    undirected_graph.print_depth_first()
-    undirected_graph.draw()
+    weighted_unidirected_graph = WeightedUniDirectedGraph()
+    print_matrix(weighted_unidirected_graph.adj_matrix)
+    weighted_unidirected_graph.print_depth_first()
+    weighted_unidirected_graph.print_breadth_first()
+    weighted_unidirected_graph.draw()
 
 """
     2 <--9-- 1 --0-> 3
@@ -94,4 +127,17 @@ if __name__ == '__main__':
 1 2 9
 1 3 1
 4 5 88
+"""
+
+"""
+6
+8
+0 1 99
+1 3 99
+3 5 99
+1 4 99
+4 5 99
+0 2 99
+2 6 99
+5 6 99
 """
