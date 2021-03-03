@@ -65,3 +65,14 @@ print(sorted_by_marks)
 # sorting on the basis of their names
 sorted_by_name = sorted(participant_list, key=lambda student_element: student_element[0])
 print(sorted_by_name)
+
+print("\nFinding if a number is already present in the set")
+unique_set = {1, 2, 3, 4, 5}
+print(unique_set)
+print(1 in unique_set)
+
+# you can check that by the in operator, before adding it
+if 3 not in unique_set:
+    print("adding because did not found 3")
+else:
+    print("Already present in the set")
