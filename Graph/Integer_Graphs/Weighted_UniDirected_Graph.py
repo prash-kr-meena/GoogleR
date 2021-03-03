@@ -13,8 +13,8 @@ class WeightedUniDirectedGraph:
     UN_VISITED = False
 
     def __init__(self):
-        self.vertices = int(input("V : "))  # No of Vertices
-        self.edges = int(input("E : "))  # # No of Edges
+        print("V:  E:  and Edges")
+        self.vertices, self.edges = list(map(int, input().strip().split()))  # No of Vertices, No of Edges
 
         self.edge_pairs: list[tuple] = []  # list of edge pairs (from, to, weight)
         self.adj_matrix = get_filled_matrix(self.vertices + 1, self.vertices + 1,
