@@ -1,11 +1,14 @@
 from Utils.Array import print_array_inline, input_array
 
+"""
+Higher Level :  Merge_2_Sorted_Arrays_Without_Space.py
+"""
+
 
 # Time: O(n + m)
 # Space: O(n + m)
 def merge_2_sorted_arrays(A, B) -> list:
     C = []  # Array will have size len(A+B)
-
     a = b = 0  # pointers in array A and B
 
     # while either one of them is exhausted
@@ -33,8 +36,6 @@ def merge_2_sorted_arrays(A, B) -> list:
 if __name__ == "__main__":
     arrA = input_array()
     arrB = input_array()
-    # arrA = [1, 1, 5, 5, 10]
-    # arrB = [- 1, 0, 0, 1, 1, 8]
     arr = merge_2_sorted_arrays(arrA, arrB)
     print_array_inline(arr)
 
