@@ -6,6 +6,10 @@ Maximum number of users: 3 (at t = 3)
 
 """
 """
+This problem is similar to the Minimum_Number_of_Platforms problem
+"""
+
+"""
     1    2    3    4    5    6
     u1 --------------------->u1
               u2------->u2
