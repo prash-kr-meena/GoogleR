@@ -1,0 +1,75 @@
+Raven service : holding user's information on basis of user's id
+
+every user will have a single type associate with him : Responsibility of Some DAta Science Team
+user Type {
+    GOLD
+    SILVER
+    BRONZE
+}
+
+
+Topology, we can setup
+once the use does any payment, an event will be triggered, and on this even we can have a hook to call this reward serivce
+we are no suer of the time here
+
+RewardService
+
+POST v1/reward_on_payment
+payload : {
+    user_id
+    payment_amount
+    time_stamp_of_payment
+    merchant_id  : so that we figure out the cool off period time from the merchant_service
+}
+
+
+call - Raven to get user, and the user Type
+-----------
+coins_to_be_rewarded = ??   on the basis fo user_leve and payemnt_amount
+
+if user_type is GOLD :
+    some_logic ??
+    coins_to_be_rewarded = 90%
+elif  user_type is SILVER :
+      some_logic ??
+      coins_to_be_rewarded = 70%
+elif user_type is BRONZE :
+        some_logic ??
+        coins_to_be_rewarded = 50%
+-----------
+time_at_which_this_coint_got_Created == payment_amount (payload)    // basically when this api is caller or when the user made the transaction
+
+wallet_id = wallet_serice.get_coin_wallet(user_id)
+add_coin_to_the_coin_wallet(wallet_id, coins_to_be_rewarded, time_at_which_this_coint_got_Created, merchant's_cool_of_day)
+
+user_table       wallet_table
+useid <--------->   wallet_id
+
+POST    v1/reward_on_payment          internal
+PUT     use_rewards  {no_of_coins}    user
+GET     check_rewad_points
+
+
+
+
+
+ wallet_table
+wallet_id  coins    tim_created      cool_of_period <day>
+            1         1 jan 21           ----
+            100      2 jan 21           15 AMZ     not yet reflected
+            100      1 jan 21           10 FLK
+            100       3 jan 20                    non-valid
+
+
+
+
+not_Cooled_of_transaction
+
+
+
+user_id  time-stamp   status              amount_coins            merchant
+                      (Debit / credit)
+
+1           22222        Credit               100                    AMZ   (15 days)
+1           22223        Debit                 99                    FLK
+

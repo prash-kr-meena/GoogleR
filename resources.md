@@ -167,3 +167,18 @@ Learning Stacks from Aditya Verma
 * To delete all the **.plantuml** file `find src -type f -name "*.plantuml" -delete`
 * To delete all the **.class** file `find src -type f -name "*.class" -delete`
 * To delete all the **__init__.py** file `find src -type f -name "__init__.py" -delete`
+
+
+
+
+
+
+
+### i was on
+
+https://leetcode.com/problems/merge-intervals/
+https://docs.google.com/document/d/1NUoBX8WzYYkKRQdIxuN_K_406NtmBm5vfL0AzEceaHQ/edit#heading=h.sbfmvevouadr
+https://docs.google.com/document/d/11EzTzksWc929SXEBTMwAYCMigWVNKn8NQfigWpyK1JQ/edit#heading=h.izraine4v8hg
+
+Binary Search
+https://medium.com/techie-delight/binary-search-practice-problems-4c856cd9f26c

@@ -18,6 +18,16 @@ Floyds Cycle Detection algorithm, and Finding the cycle intersection
 Accepted on leetcode
 """
 
+"""
+This algorithm works, when the constraints are that
+we can't user extra storage, and we also can't change the array (ie sorting will not be allowed)
+
+alternate approaches exist, like by having a hashmap to store frequency 
+or 
+by sorting the array
+But when these two approaches are not acceptable then we need to use this Floyds algorithm 
+"""
+
 
 class Solution:
     def find_duplicate(self, arr: List[int]) -> int:
