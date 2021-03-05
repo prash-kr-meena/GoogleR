@@ -17,7 +17,7 @@ def find_first_and_second_largest__not_handling_duplicity(nums) -> (int, int):
         if n > first_largest:
             second_largest = first_largest
             first_largest = n
-        elif n > second_largest:  # Not handeling duplicate cases
+        elif n > second_largest:  # Not handling duplicate cases Notice
             second_largest = n
 
     if second_largest == float("-inf"):
