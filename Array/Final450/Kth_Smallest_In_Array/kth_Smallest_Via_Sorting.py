@@ -3,6 +3,7 @@ from Utils.Array import input_array
 
 # Approach 1: Sorting
 # Time : O(n Log n)
+# Space : O(1)
 
 # k is 1_indexed (Assumption)
 def kth_smallest__sorting(A, k):

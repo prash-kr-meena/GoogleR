@@ -1,3 +1,4 @@
 We have done the kth_smallest and kth_largest, problem using the sorting, and
-quick select Approach as well
+quick select and sorting Approach as well
+
 check the Array.Final450.Kth_Smallest_In_Array package
