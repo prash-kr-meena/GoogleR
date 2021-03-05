@@ -6,16 +6,16 @@ def get_filled_matrix(row_size, col_size, fill=0):
     return [[fill for _ in range(col_size)] for _ in range(row_size)]
 
 
-def input_integer_matrix() -> List[List[int]]:
+def input_integer_matrix(prompt="arr : ") -> List[List[int]]:
     """
     Jagged Array Is Possible : https://en.wikipedia.org/wiki/Jagged_array
     Notice : you need to be careful, on the no of columns you are putting
     """
-    row = int(input("row :"))
+    row = int(input("rows :"))
 
     matrix = []
     for _ in range(row):
-        row = input_array()
+        row = input_array(prompt)
         matrix.append(row)
     return matrix
 

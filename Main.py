@@ -76,3 +76,31 @@ if 3 not in unique_set:
     print("adding because did not found 3")
 else:
     print("Already present in the set")
+
+
+# Can we delete an element from the array while we are traversing that array??
+# Lets find out
+def demo_deleting_element_from_list_while_traversing():
+    print("demo_deleting_element_from_list_while_traversing")
+    array = [1, 2, 3, 4, 5]
+    print("before deleting : ", array)
+
+    # wrong way of deleting :: as here you are deleting the element variable, and not from the actual array  Notice
+    for element in array:
+        print(element, end=" ")
+        if element == 3:
+            del element
+            print("\nAfter Deleting : ", array)
+
+    print("\n\nbefore deleting : ", array)
+    for i in range(len(array)):
+        print("length : ", len(array))
+        if array[i] == 3:
+            del array[i]  # Now here we are deleting it from the actual array
+            print("\nAfter Deleting : ", array)
+
+    # NOTE : it is possible, but you need to be very careful of doing any operation on indexes,
+    #  as when the size decrease it is possible that, the index could go out of bound
+
+
+demo_deleting_element_from_list_while_traversing()

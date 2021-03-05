@@ -2,9 +2,9 @@ from typing import List
 from Utils.Matrix import input_integer_matrix
 
 """
-Merge Overlapping Subintervals
+Merge Overlapping Sub-Intervals
 Google Doc : https://docs.google.com/document/d/1NUoBX8WzYYkKRQdIxuN_K_406NtmBm5vfL0AzEceaHQ/edit#heading=h.sbfmvevouadr
-Leet Code : https://leetcode.com/problems/merge-intervals/
+Leet-Code : https://leetcode.com/problems/merge-intervals/
 """
 
 """
