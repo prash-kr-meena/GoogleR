@@ -19,10 +19,10 @@ def find_first_second_and_third_smallest(nums):
             third_smallest = second_smallest
             second_smallest = first_smallest
             first_smallest = n
-        elif n < second_smallest and n != first_smallest:  # to handle duplicate cases
+        elif n < second_smallest and n != first_smallest:  # To handle duplicate cases
             third_smallest = second_smallest
             second_smallest = n
-        elif n < third_smallest and n != second_smallest and n != first_smallest:
+        elif n < third_smallest and n != second_smallest and n != first_smallest:  # To handle multiple duplicate cases
             third_smallest = n
 
     return first_smallest, second_smallest, third_smallest
