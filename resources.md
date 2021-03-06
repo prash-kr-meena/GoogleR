@@ -18,6 +18,10 @@ teaches this topic - For now what i have done is clear to me, what we do by maki
 
 Learning Stacks from Aditya Verma
 
+#### Heap
+
+* [How can building a heap be O(n) time complexity?](https://stackoverflow.com/questions/9755721/how-can-building-a-heap-be-on-time-complexity)
+
 ## Code Resource
 
 #### Using list as stack
@@ -167,12 +171,6 @@ Learning Stacks from Aditya Verma
 * To delete all the **.plantuml** file `find src -type f -name "*.plantuml" -delete`
 * To delete all the **.class** file `find src -type f -name "*.class" -delete`
 * To delete all the **__init__.py** file `find src -type f -name "__init__.py" -delete`
-
-
-
-
-
-
 
 ### i was on
 

@@ -1,25 +1,24 @@
 from heapq import heapify, heappush, heappop
 
 """
-Note : this problem can also be done by the quick select algorithm,
-checkout package Kth_Smallest_n_Largest_In_Array in Array.Final450
+Need to find kth largest (maximum), We will be create a Max-Heap
+and for that we will use -ve values for elements
+
+Also as we will be doing inplace, so we will just modify A, for all -ve numbers
 """
 
 
-# As the problem is for kth Largest : we need to make a Min-Heap
 def kth_smallest(A, k):
     if k >= len(A):  # Edge Case, k can't be more then array length
         return None
 
-    heap = []  # using min-heap
-    heapify(heap)
+    A = [-e for e in A]  # making elements -ve  Notice
+    heapify(A)
 
-    for element in A:
-        heappush(heap, element)
-        if len(heap) > k:
-            heappop(heap)
+    for i in range(1, k):  # pop till k-1 th elements,      k is 1 based index, that is why starting from 1
+        heappop(A)
 
-    return heap[0]  # Top element of heap, ie the minHeap (Min-Heap)
+    return -heappop(A)  # Notice
 
 
 if __name__ == '__main__':
