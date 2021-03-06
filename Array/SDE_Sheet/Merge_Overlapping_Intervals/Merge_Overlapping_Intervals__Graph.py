@@ -8,7 +8,10 @@ Leet-Code : https://leetcode.com/problems/merge-intervals/
 """
 
 """
-Implementing the optimized 
+The Graph implementation will also not be optimal
+as it will also be O(n2) only
+
+We can do this in graphs using the concept of Connected Components
 """
 
 
