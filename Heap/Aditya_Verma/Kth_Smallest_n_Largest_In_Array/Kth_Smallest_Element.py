@@ -1,5 +1,7 @@
 from heapq import heapify, heappush, heappop
 
+from Utils.Array import input_array
+
 """
 https://practice.geeksforgeeks.org/problems/kth-smallest-element5635/1
 
@@ -7,14 +9,26 @@ Note : this problem can also be done by the quick select algorithm,
 checkout package Kth_Smallest_n_Largest_In_Array in Array.Final450
 """
 
+"""
+As the problem is for kth Smallest : we need to make a Max-Heap
+which in case of primitives, we make by using -ve values with MIN-Heap
+"""
 
-# As the problem is for kth Smallest : we need to make a Max-Heap
-# which in case of primitives, we make by using -ve values with MIN-Heap
-def kth_smallest(A, k):
+"""
+Time :    here we are creating an empty heap, and having at most k elements in the heap,
+              so popping will be O(lg k) and adding elements will be O(lg k)
+          we are traversing the whole array so O(n) and either adding and/or  removing from the heap ie O(lg k)
+          Total  : O(n lg k)
+
+Space :   O(k) size of heap
+"""
+
+
+def kth_smallest(A, k) -> int:
     if k >= len(A):  # Edge Case, k can't be more then array length
         return None
 
-    heap = []  # using min-heap as Max-Heap
+    heap = []  # using min-heap as Max-Heap, so multiplying element with -ve
     heapify(heap)
 
     for element in A:
@@ -22,13 +36,12 @@ def kth_smallest(A, k):
         if len(heap) > k:
             heappop(heap)
 
-    # print(heap)
     return -heap[0]  # Top element of heap, ie the maximum (as Max-Heap) (Notice : -ve)
 
 
 if __name__ == '__main__':
     n = int(input())
-    arr = list(map(int, input().strip().split()))
+    arr = input_array()
     k = int(input())
     print(kth_smallest(arr, k))
 
@@ -56,19 +69,20 @@ K = 3
 6
 3 3 1 8 2 1
 1
+==> 1
 
 6
 3 3 1 8 2 1
 2
+==> 1
 
 6
 3 3 1 8 2 1
 3
-
+==> 2
 
 
 12 3 5 7 19      - Random
 1 2 3 4 5 6      - Sorted
 9 8 7 6 5 4      - Reverse Sorted
-
 """
