@@ -1,5 +1,5 @@
 from typing import List
-from Utils.Matrix import input_integer_matrix
+from Utils.Matrix import input_matrix
 
 """
 Merge Overlapping Sub-Intervals
@@ -24,7 +24,7 @@ class Solution:
 
 
 if __name__ == '__main__':
-    interval_matrix = input_integer_matrix()
+    interval_matrix = input_matrix()
     print(interval_matrix)
     pass
 

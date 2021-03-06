@@ -1,10 +1,10 @@
 from typing import List
-from Utils.Matrix import input_integer_matrix
+from Utils.Matrix import input_matrix
 
 """
 Merge Overlapping Subintervals
 Google Doc : https://docs.google.com/document/d/1NUoBX8WzYYkKRQdIxuN_K_406NtmBm5vfL0AzEceaHQ/edit#heading=h.sbfmvevouadr
-Leet Code : https://leetcode.com/problems/merge-intervals/
+Submitted on LeetCode : https://leetcode.com/problems/merge-intervals/
 """
 
 """
@@ -44,7 +44,7 @@ class Solution:
 
 
 if __name__ == '__main__':
-    interval_matrix = input_integer_matrix("")
+    interval_matrix = input_matrix("")
     print(Solution().merge(interval_matrix))
 
 """

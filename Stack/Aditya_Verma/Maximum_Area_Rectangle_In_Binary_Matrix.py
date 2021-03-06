@@ -1,5 +1,5 @@
 from Stack.Aditya_Verma.Maximum_Area_Histogram import mah
-from Utils.Matrix import input_integer_matrix
+from Utils.Matrix import input_matrix
 
 """
 Time  : O(n * m)
@@ -33,7 +33,7 @@ def find_max_area_rectangle_in_binary_matrix(matrix):
 
 
 if __name__ == '__main__':
-    arr2D = input_integer_matrix()
+    arr2D = input_matrix()
     max_area = find_max_area_rectangle_in_binary_matrix(arr2D)
     print(max_area)
 
