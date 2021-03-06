@@ -1,7 +1,7 @@
 from Utils.Array import input_array
 
 
-class Node:
+class SLLNode:
     def __init__(self, data):
         self.data = data
         self.next = None
@@ -18,12 +18,12 @@ class SinglyLinkedList:
         """
         linked_list_data = input_array()
 
-        temporary_node = Node(-9999999)
+        temporary_node = SLLNode(-9999999)
         self.head = self.tail = temporary_node  # To get rid off null check on head, in the loop
 
         # tail : will work as the moving_pointer
         for data in linked_list_data:
-            new_node = Node(data)
+            new_node = SLLNode(data)
             self.tail.next = new_node
             self.tail = self.tail.next
 
