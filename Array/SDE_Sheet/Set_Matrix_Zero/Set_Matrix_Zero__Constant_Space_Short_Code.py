@@ -24,37 +24,28 @@ Two approaches :
 """
 
 
+# You could decrease the no of loops, and do the task of 1st, 2nd and 3rd loop in one go
 def set_matrix_zero(matrix):
-    fill_0_in_0th_row = False
-    fill_0_in_0th_column = False
-
     row_count, column_count = len(matrix), len(matrix[0])
 
+    fill_0_in_0th_row = False
+    fill_0_in_0th_column = False
     # Find answer to the question ?  fill_0_in_0th_row and fill_0_in_0th_column
-    for j in range(column_count):
-        if matrix[0][j] == 0:  # going through first row, by changing columns
-            fill_0_in_0th_row = True
-            break
 
-    for i in range(row_count):
-        if matrix[i][0] == 0:  # going through first column, by changing rows
-            fill_0_in_0th_column = True
-            break
-
-    # Now we are allowed to use the 0th row and 0th column, as space
-    # so we can mark the first_element of ith row and first_element of jth column
-    # ie, matrix[i][0] = 0       for marking first element of ith row
-    # ie, matrix[0][j] = 0       for marking first element of jth column
-
-    # Here you need to start from the 1st row and 1st column, as we are using 0th row and column :: NOTE
-    for i in range(1, row_count):
-        for j in range(1, column_count):
+    # Here you need to start from the 0st row and 0th column, as we are using 0th row and column :: NOTE
+    for i in range(0, row_count):
+        for j in range(0, column_count):  # here we are string from 0
             if matrix[i][j] == 0:
                 matrix[i][0] = 0
                 matrix[0][j] = 0
 
+            if i == 0:
+                fill_0_in_0th_row = True
+            if j == 0:
+                fill_0_in_0th_column = True
+
     # now for all the marked first_elemnets we will make that row zero, basically checking what we have marked above
-    # Here you need to start from the 1st row and 1st column, as we are useing 0th row and column :: NOTE
+    # Here you need to start from the 1st row and 1st column, as we are using 0th row and column :: NOTE
     for i in range(1, row_count):
         for j in range(1, column_count):
             if matrix[i][0] == 0 or matrix[0][j] == 0:
