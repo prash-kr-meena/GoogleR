@@ -19,6 +19,7 @@ if __name__ == '__main__':
     arr = input_array()
     k = int(input("k : "))
     print(kth_smallest__quick_select(arr, k))
+    print(sorted(arr))
 
 """
 12 3 5 7 19      - Random
