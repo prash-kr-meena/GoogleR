@@ -1,9 +1,13 @@
 from Search_Sorting.Algorithms.Quick_Select import quick_select
 from Utils.Array import input_array
 
+"""
+Submitted on LeetCode : https://leetcode.com/problems/kth-largest-element-in-an-array/submissions/
 
-# for kth largest in an array, you can just use the QuickSelect implementation
-# and instead of passing k, you can pass something like arr_size - k -1
+
+for kth largest in an array, you can just use the QuickSelect implementation
+and instead of passing k, you can pass something like arr_size - k -1
+"""
 
 
 def find_kth_largest(arr, k) -> int:
