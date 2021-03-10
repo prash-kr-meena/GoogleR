@@ -1,9 +1,9 @@
 from sys import setrecursionlimit
 
-from Search_Sorting.Algorithms.Binary_Search_Recursive import binary_search_recursive
+from Binary_Search.Algorithm.Binary_Search_Recursive import binary_search_recursive
 
 '''
-Basically implementing Binary Search using recursion, as array is guaranteed to be sorted
+Basically implementing Binary_Search using recursion, as array is guaranteed to be sorted
 
 Time : O(log N)
 Space : O(log N)  for function stack frames, due to recursion
