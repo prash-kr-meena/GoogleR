@@ -28,6 +28,11 @@ if __name__ == "__main__":
 
     print("{} \nKey : {} \nIndex : {}".format(array, search_key, index))
 
+"""
+[]      -> Just put enter
+[3]
+"""
+
 """                                 ----- Ascending -----
  1 2 3 4 5 6 7 8 9
  6
