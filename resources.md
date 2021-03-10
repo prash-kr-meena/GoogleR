@@ -7,6 +7,8 @@
 * [Backtracking - Wikipedia](https://en.wikipedia.org/wiki/Backtracking)
 * [Iteration, Recursion & Recursive Backtracking](https://sites.fas.harvard.edu/~cscie119/lectures/recursion.pdf) <br>
   Recursive Backtracking in General - Page 22
+* [Is there any O(n^2) algorithm to generate all sub-sequences of an array?](https://stackoverflow.com/questions/51213210/is-there-any-on2-algorithm-to-generate-all-sub-sequences-of-an-array)
+
 
 The idea is that in backtracking, some candidates are abandoned, they are explored first, but once found it did not land
 us to correct result we go back to that state and reject that candidate, and choose a different candidate for exploring
