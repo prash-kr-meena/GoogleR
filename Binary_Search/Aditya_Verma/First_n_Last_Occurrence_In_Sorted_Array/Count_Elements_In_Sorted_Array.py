@@ -1,6 +1,6 @@
-from Binary_Search.First_n_Last_Occurrence_In_Sorted_Array.First_Occurrence_In_Sorted_Array import \
+from Binary_Search.Aditya_Verma.First_n_Last_Occurrence_In_Sorted_Array.First_Occurrence_In_Sorted_Array import \
     first_occurrence_in_sorted_array
-from Binary_Search.First_n_Last_Occurrence_In_Sorted_Array.Last_Occurrence_In_Sorted_Array import \
+from Binary_Search.Aditya_Verma.First_n_Last_Occurrence_In_Sorted_Array.Last_Occurrence_In_Sorted_Array import \
     last_occurrence_in_sorted_array
 from Utils.Array import input_array
 
