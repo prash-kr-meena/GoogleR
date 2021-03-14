@@ -20,7 +20,7 @@ def find_element_in_rotated_sorted_array(arr, key) -> int:
         return -1  # Could not find element
 
     next = (min_value_idx + 1) % n
-    prev = (min_value_idx + n - 1) % n  # Notice
+    prev = (min_value_idx + n - 1) % n  # This can only be done in a rotated sorted array Notice
 
     if key == arr[min_value_idx]:
         return min_value_idx

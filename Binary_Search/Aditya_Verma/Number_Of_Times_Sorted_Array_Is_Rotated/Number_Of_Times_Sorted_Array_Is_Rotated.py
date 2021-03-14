@@ -51,8 +51,8 @@ def find_index_of_the_minimum_element__in_sorted_rotated_array(arr) -> int:
             return left
 
         mid = (left + right) // 2
-        next = (mid + 1) % n  # so that it does not go out of bound Notice
-        prev = (mid + n - 1) % n  # Notice
+        next = (mid + 1) % n  # To prevent from index out of bound Notice
+        prev = (mid + n - 1) % n  # This can only be done in a rotated sorted array  Notice
 
         if arr[mid] <= arr[prev] and arr[mid] <= arr[next]:
             return mid
