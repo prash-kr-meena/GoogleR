@@ -38,7 +38,7 @@ NOTE : This code is applicable with a condition that there are  ---- NO REPEATED
 
 
 # Handling the case then the array is not rotated, ie rotation = 0
-def find_index_of_the_minimum_number(arr) -> int:
+def find_index_of_the_minimum_element__in_sorted_rotated_array(arr) -> int:
     if arr is None or len(arr) == 0:
         return 0
 
@@ -51,8 +51,8 @@ def find_index_of_the_minimum_number(arr) -> int:
             return left
 
         mid = (left + right) // 2
-        next = (mid + 1) % n
-        prev = (mid + n - 1) % n
+        next = (mid + 1) % n  # so that it does not go out of bound Notice
+        prev = (mid + n - 1) % n  # Notice
 
         if arr[mid] <= arr[prev] and arr[mid] <= arr[next]:
             return mid
@@ -68,9 +68,9 @@ if __name__ == '__main__':
     array = input_array()
     n = len(array)
 
-    min_value_idx = find_index_of_the_minimum_number(array)
+    min_value_idx = find_index_of_the_minimum_element__in_sorted_rotated_array(array)
     print("rotation_count__when_RIGHT_ROTATED : ", min_value_idx)
-    print("rotation_count__when__LEFT_ROTATED : ", n - min_value_idx % n)   # modulo by zero, when array with 0 length
+    print("rotation_count__when__LEFT_ROTATED : ", n - min_value_idx % n)  # modulo by zero, when array with 0 length
 
 """
 15 18 2 3 6 12
