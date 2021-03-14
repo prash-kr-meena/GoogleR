@@ -11,7 +11,8 @@ But we can do it in O(lg n) using binary search
 """
 
 """
-Assumptions and Clarifications:
+ ................................ Assumptions and Clarifications ................................ 
+ 
 We are looking at Increasingly Ordered sorted elements only here        [smaller -----------------> Higher]
 
 When an array is rotated, not matter in which direction, clockwise or anti-clockwise
@@ -19,6 +20,7 @@ The smaller element will come after some elements, basically the structure will 
 [ smaller------------->large  <<smallest_element>>  -------> larger ] 
 
 so the logic for finding the index of the smallest element remains the same, no matter what
+
 
 But when you want to count the number of rotation, now that actually depends on the way you are rotating
 * Clock-Wise       (Right) Rotation  
@@ -36,7 +38,7 @@ NOTE : This code is applicable with a condition that there are  ---- NO REPEATED
 
 
 # Handling the case then the array is not rotated, ie rotation = 0
-def find_no_of_times_sorted_array_is_rotated(arr) -> int:
+def find_index_of_the_minimum_number(arr) -> int:
     if arr is None or len(arr) == 0:
         return 0
 
@@ -64,7 +66,11 @@ def find_no_of_times_sorted_array_is_rotated(arr) -> int:
 
 if __name__ == '__main__':
     array = input_array()
-    print(find_no_of_times_sorted_array_is_rotated(array))
+    n = len(array)
+
+    min_value_idx = find_index_of_the_minimum_number(array)
+    print("rotation_count__when_RIGHT_ROTATED : ", min_value_idx)
+    print("rotation_count__when__LEFT_ROTATED : ", n - min_value_idx % n)   # modulo by zero, when array with 0 length
 
 """
 15 18 2 3 6 12
