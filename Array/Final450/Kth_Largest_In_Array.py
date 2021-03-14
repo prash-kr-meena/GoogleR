@@ -1,4 +1,4 @@
-from Search_Sorting.Algorithms.Quick_Select import quick_select
+from Search_Sorting._Algorithms.Quick_Select import quick_select
 from Utils.Array import input_array
 
 """

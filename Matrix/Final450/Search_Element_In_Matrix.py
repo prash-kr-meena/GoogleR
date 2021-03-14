@@ -1,4 +1,4 @@
-from Binary_Search.Algorithm.Binary_Search_Iterative import binary_search
+from Binary_Search._Algorithm.Binary_Search_Iterative import binary_search
 
 """
 Too Brute Force

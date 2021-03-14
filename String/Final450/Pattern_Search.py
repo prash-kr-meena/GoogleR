@@ -1,6 +1,6 @@
 # naive - bruteforce
 # kmp
-# KMP Algorithm
+# KMP _Algorithm
 
 """
 """

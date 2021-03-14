@@ -1,4 +1,4 @@
-from Search_Sorting.Algorithms.Quick_Sort import partition
+from Search_Sorting._Algorithms.Quick_Sort import partition
 from Utils.Array import input_array
 
 # https://www.geeksforgeeks.org/quickselect-algorithm/

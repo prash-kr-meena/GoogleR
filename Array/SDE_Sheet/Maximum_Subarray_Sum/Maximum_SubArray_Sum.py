@@ -1,7 +1,7 @@
 from Utils.Array import input_array
 
 """
-Kadance Algorithm
+Kadance _Algorithm
 
 Submitted on Leetcode : https://leetcode.com/problems/maximum-subarray/
 Striver : https://www.youtube.com/watch?v=w_KEocd__20&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=9&ab_channel=takeUforward

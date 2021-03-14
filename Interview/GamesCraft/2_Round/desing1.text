@@ -1,0 +1,109 @@
+library management system
+1. books
+2. it has copies of books
+3. members
+
+Member -> borrow book
+1. at one point of time, can borrow 2 books max
+2. member can only borrow book if it's available in library
+3. a user cannot have more than 1 copy of book at a time
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------
+
+Books
+id     |     title       |   Author_id   |       total_book_count        |          current_count_inventory
+
+
+
+
+Members
+id     |     name     |   borrow_count= Max 2
+
+
+
+: locially check if the current_count_inventory is more then 0
+also once the book is assigned, then decrease the current_count_inventory
+
+BORROW Table
+member_id   |   book_id
+
+
+
+
+Autor
+id  | name
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------
+
+search -> get the bookid from there
+
+POST api/borrow {
+  member_id : "sjdkfljsldkj"
+  book_id : "sjlfkjsalkdjf"
+}
+
+
+
+borrow(memberId, bookId) {
+  int count = getUserBorrowCount(memberId);
+
+  # handling if he can borrow more books or not
+  if (count == 2) {
+			throw EXception( "max count reached" )
+  }
+
+  List<Borrows> borrrowed_books =  getBooksUserHasBorrowed(memberId)
+  for(borrrowed_book in borrrowed_books) {
+  		if borrrowed_book.book_id == bookId
+      		throw EXception( "YOu can't have more then one copy of the same book" )
+  }
+
+
+  // check if this book is present int the inventory : basically the current count of this book should be more then 0
+  throw EXception( "We don't have this book in our inventory right now, will inform you later" )
+
+
+  process_borrow(memberId, booId)
+  // return json response
+}
+
+
+
+
+getUserBorrowCount (memberId){
+	 return   select borrow_count from member where member_id = memberId
+}
+
+getBooksUserHasBorrowed(memberId){
+   return   select book_id from borrow_table where member_id = memberId
+}
+
+
+@Transactional????
+process_borrow(memberId, booId){
+  update table  Books set current_count_inventory = current_count_inventory-1  where  current_count_inventory > 0
+  if it passes :
+     insert into  borrow_table values (? ?), memberId  booId
+}
+
+--------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+mysql mongo
+redis
+aws
+kafka
+kineses
+spring boot
+node js      -> type script
+
+
+react

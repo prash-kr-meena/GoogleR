@@ -2,8 +2,8 @@
 Given a sorted array of numbers, find if a given number ‘key’ is present in the array.
 Though we know that the array is sorted, we don’t know if it’s sorted in ascending or descending order.
 """
-from Binary_Search.Algorithm.Binary_Search_Iterative import binary_search
-from Binary_Search.Algorithm.Binary_Search_Reverse_Sorted_Array import binary_search_reverse_sorted_array
+from Binary_Search._Algorithm.Binary_Search_Iterative import binary_search
+from Binary_Search._Algorithm.Binary_Search_Reverse_Sorted_Array import binary_search_reverse_sorted_array
 from Utils.Array import input_array
 
 

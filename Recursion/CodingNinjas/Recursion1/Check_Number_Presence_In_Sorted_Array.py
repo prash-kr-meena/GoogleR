@@ -1,6 +1,6 @@
 from sys import setrecursionlimit
 
-from Binary_Search.Algorithm.Binary_Search_Recursive import binary_search_recursive
+from Binary_Search._Algorithm.Binary_Search_Recursive import binary_search_recursive
 
 '''
 Basically implementing Binary_Search using recursion, as array is guaranteed to be sorted

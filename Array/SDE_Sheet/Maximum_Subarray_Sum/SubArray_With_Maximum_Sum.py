@@ -1,7 +1,7 @@
 from Utils.Array import input_array
 
 """
-Kadance Algorithm
+Kadance _Algorithm
 GeeksForGeeks : https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
 """
 

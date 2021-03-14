@@ -1,4 +1,4 @@
-from Array.Algorithms.PrefixSum import prefix_sum
+from Array._Algorithms.PrefixSum import prefix_sum
 from Utils.Array import input_array
 
 # https://www.geeksforgeeks.org/range-sum-queries-without-updates/
