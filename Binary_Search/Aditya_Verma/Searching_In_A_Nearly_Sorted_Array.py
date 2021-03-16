@@ -22,13 +22,16 @@ def find_key_in_nearly_sorted_array(A, key) -> int:
     while left <= right:
         mid = left + (right - left) // 2
 
+        prev = (mid + n - 1) % n
+        next = (mid + 1) % n
+
         # comparing with mid, mid-1 and mid+1
         if A[mid] == key:
             return mid
-        elif mid - 1 >= 0 and A[mid - 1] == key:
-            return mid - 1
-        elif mid + 1 <= n - 1 and A[mid + 1] == key:
-            return mid + 1
+        elif A[prev] == key:
+            return prev
+        elif A[next] == key:
+            return next
         # mid is not in any of the near 3 indexes
 
         elif A[mid] < key:  # key present in the right half
@@ -47,13 +50,23 @@ if __name__ == '__main__':
 
 """
 10 30 40 20 50 80 70
-40 
+40
 2   << Output:    Output is index of 40 in given array
 
-"""
-
-"""
 10 30 40 20 50 80 70
 90
 -1  << Output       -1 is returned to indicate element is not present
+
+
+10 30 40 20 50 80 70
+10
+0   << Output
+
+10 30 40 20 50 80 70
+70
+0   << Output
+
+10 30 40 20 50 80 70
+20
+3   << Output
 """
