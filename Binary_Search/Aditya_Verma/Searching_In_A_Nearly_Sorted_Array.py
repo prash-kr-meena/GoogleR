@@ -46,14 +46,14 @@ if __name__ == '__main__':
     print("index ", index)
 
 """
-10 30 40 20 50 80 70        = Arr 
-40                          = key 
+10 30 40 20 50 80 70
+40 
 2   << Output:    Output is index of 40 in given array
 
 """
 
 """
-10 30 40 20 50 80 70        = Arr 
-90                          = key
+10 30 40 20 50 80 70
+90
 -1  << Output       -1 is returned to indicate element is not present
 """
