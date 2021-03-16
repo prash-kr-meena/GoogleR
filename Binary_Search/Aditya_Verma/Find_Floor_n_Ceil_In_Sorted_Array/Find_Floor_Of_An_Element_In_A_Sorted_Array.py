@@ -5,9 +5,9 @@ The idea of finding the candidate for our result, is similar to that of the prob
 First_n_Last_Occurrence_In_Sorted_Array of array
 
 
-For an element E, all the elements that are smaller and equal to the E, will form a candidate
+For an element E, all the elements that are SMALLER and EQUAL to the E, will form a candidate
 
-Basically we need to find the greatest element smaller then or equal to keyw
+Basically we need to find the GREATEST element SMALLER then or equal to key
 """
 
 
@@ -21,11 +21,11 @@ def find_floor_of_an_element_in_a_sorted_array(A, key):
         mid = (left + right) // 2
 
         if A[mid] == key:
-            return A[mid]  # as floor of e is e, if is present in the A
+            return A[mid]  # as FLOOR of e is e, if is present in the A
 
         elif A[mid] < key:
-            # update the result (candidate) and mod
-            if A[mid] > result:
+            # update the result (candidate) and move
+            if A[mid] > result:  # We need to find the LARGEST candidate
                 result = A[mid]
 
             # now to move more closer to the key, we go to the right
