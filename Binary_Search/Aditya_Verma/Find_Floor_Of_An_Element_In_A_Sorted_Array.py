@@ -6,6 +6,8 @@ First_n_Last_Occurrence_In_Sorted_Array of array
 
 
 For an element E, all the elements that are smaller and equal to the E, will form a candidate
+
+Basically we need to find the greatest element smaller then or equal to keyw
 """
 
 
@@ -20,15 +22,17 @@ def find_floor_of_an_element_in_a_sorted_array(A, key):
 
         if A[mid] == key:
             return A[mid]  # as floor of e is e, if is present in the A
-        elif A[mid] > key:  # not a candidate, go to left for smaller elements
-            right = mid - 1
-        else:  # A[mid] < key
+
+        elif A[mid] < key:
             # update the result (candidate) and mod
             if A[mid] > result:
                 result = A[mid]
 
             # now to move more closer to the key, we go to the right
             left = mid + 1
+
+        else:  # A[mid] > key   Not a candidate, go to left for smaller elements
+            right = mid - 1
 
     return result
     # here we are sending, the actual value and not the index, as we do in binary search Notice
