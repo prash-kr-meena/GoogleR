@@ -34,18 +34,25 @@ if __name__ == '__main__':
     water_cooler(n, x, array)
 
 """
-Q1. There are n people and two identical water coolers to drink water ie w1 and w2. We have an array of size n such that each element stores time required by i-th person to drink water. At one time instant, only one person can be there on each water cooler. Given a value x, defining the time till which the water coolers are operational, check whether all persons can drink water.
+Q1. There are n people and two identical water coolers to drink water ie w1 and w2. 
+We have an array of size n such that each element stores time required by i-th person to drink water. 
+At one time instant, only one person can be there on each water cooler.
+Given a value x, defining the time till which the water coolers are operational, check whether all persons can drink water.
 
 Input  : n = 3, x = 4
-         a[] = {2, 4, 2}	
+         A = [2, 4, 2]	
+
 Output: YES
 w1 = 2, 2
 w2 = 4
 
-1 3 5 6
+
+A = [1 3 5 6]
 X = 8
 W1 = 6,1
 W2 = 5,3 
+
+
 
 W1     w2 
 
@@ -70,4 +77,13 @@ Do not 1   []             - > 3 5 6          x=8
 w1 w2
 10 10
 
+
+4
+8
+1 3 5 6
+
+
+4
+8
+1 3 6 6
 """
