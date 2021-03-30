@@ -78,12 +78,23 @@ w1 w2
 10 10
 
 
-4  = n 
-8  = x
-1 3 5 6  = arr
+4           = n 
+8           = x
+1 3 5 6     = arr
 
 
-4  = n
-8  = x
-1 3 6 6  = arr
+4           = n
+8           = x
+1 3 6 6     = arr
+
+
+
+Time Complexity : EXponential
+Space complexity : recursion uses space
+
+
+
+after memoization 
+Time : O(n)
+Space : Constant
 """
