@@ -15,7 +15,9 @@ so if we don't put all the elements in one big array then we will be having the 
 
 Also, then to know if the event is corresponding to the ARRIVAL or DEPARTURE, we would not require to do mapping
 we would know, from the array we are reading, if we are reading from arrivals array it will be an arrival event
-and if we are reading form departure array it will be a departure event 
+and if we are reading form departure array it will be a departure event
+
+Minimum Meeting Rooms - Problem follows a similar implementation and approach, as pointed by me heree
 """
 
 

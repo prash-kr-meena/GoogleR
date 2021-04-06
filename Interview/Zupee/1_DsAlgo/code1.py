@@ -9,9 +9,7 @@ Maximum number of users: 3 (at t = 3)
 This problem is similar to the Minimum_Number_of_Platforms problem
 
 The implementation is similar to the ArrayManipulation.py HackerRank problem 
-
 Which if you see is similar to the minimum_meeting_rooms_problem
-https://www.youtube.com/watch?v=KIKjKlbJUwU&ab_channel=SunnyGupta
 """
 
 """
