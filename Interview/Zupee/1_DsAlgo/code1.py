@@ -3,10 +3,13 @@ You have given N Gamers login and logout time.
 Find the maximum logged in users at any instance of time.
 Example: u1 => 1 6, u2 => 3 5, u3=> 2 3
 Maximum number of users: 3 (at t = 3)
+"""
 
 """
-"""
 This problem is similar to the Minimum_Number_of_Platforms problem
+
+Which if you see is similar to the minimum_meeting_rooms_problem
+https://www.youtube.com/watch?v=KIKjKlbJUwU&ab_channel=SunnyGupta
 """
 
 """

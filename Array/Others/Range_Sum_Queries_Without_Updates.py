@@ -1,10 +1,8 @@
 from Array._Algorithms.PrefixSum import prefix_sum
 from Utils.Array import input_array
 
-# https://www.geeksforgeeks.org/range-sum-queries-without-updates/
-
-
 """
+https://www.geeksforgeeks.org/range-sum-queries-without-updates/
 With this approach, of prefix-sum this problem can be solved in O(n+m) time
 Otherwise the brute force solution would be o(m*n)
     -> as for m queries we would be doing O(n) operations in worst case 

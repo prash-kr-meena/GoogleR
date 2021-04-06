@@ -20,16 +20,16 @@ and if we are reading form departure array it will be a departure event
 
 
 def minimum_platforms(arrivals, departures) -> int:
-    arrivals_mapped = [(arrival, ARRIVAL) for arrival in arrivals]
-    departures_mapped = [(departure, DEPARTURE) for departure in departures]
-    time_status_mapping = arrivals_mapped + departures_mapped  # concatenating it all in one array
-    time_status_mapping.sort(key=lambda time_status: time_status[0])  # sorting on time, which is first element
-    # print(time_status_mapping)
+    arrivals_data = [(arrival, ARRIVAL) for arrival in arrivals]
+    departures_data = [(departure, DEPARTURE) for departure in departures]
+    arrival_departure_data = arrivals_data + departures_data  # concatenating it all in one array
+    arrival_departure_data.sort(key=lambda data: data[0])  # sorting data on time, which is 0th element
+    # print(arrival_departure_data)
 
     max_arrivals = float("-inf")
     curr_arrivals = 0
-    for time_status in time_status_mapping:
-        status = time_status[1]
+    for data in arrival_departure_data:
+        status = data[1]
         if status == ARRIVAL:
             curr_arrivals += 1
         elif status == DEPARTURE:
