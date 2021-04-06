@@ -8,6 +8,8 @@ Maximum number of users: 3 (at t = 3)
 """
 This problem is similar to the Minimum_Number_of_Platforms problem
 
+The implementation is similar to the ArrayManipulation.py HackerRank problem 
+
 Which if you see is similar to the minimum_meeting_rooms_problem
 https://www.youtube.com/watch?v=KIKjKlbJUwU&ab_channel=SunnyGupta
 """
@@ -20,8 +22,8 @@ https://www.youtube.com/watch?v=KIKjKlbJUwU&ab_channel=SunnyGupta
 """
 
 
-def find_max_user(pair_list, n, min_login_time, max_logout_time):
-    # print(pair_list, n, min_login_time, max_logout_time)
+def find_max_loged_in_users(pair_list, n, min_login_time, max_logout_time):
+    print(pair_list, n, min_login_time, max_logout_time)
 
     prefix_time_arr = [0] * (max_logout_time + 2)
     for pair in pair_list:
@@ -33,8 +35,8 @@ def find_max_user(pair_list, n, min_login_time, max_logout_time):
     # doing prefix sum
     for i in range(1, len(prefix_time_arr)):
         prefix_time_arr[i] += prefix_time_arr[i - 1]
-
     # print(prefix_time_arr)
+
     max_no_of_user = max(prefix_time_arr)
     # print(max_no_of_user)
     return max_no_of_user
@@ -54,7 +56,7 @@ if __name__ == '__main__':
         max_logout_time = max(pair[1], max_logout_time)
         pair_list.append(pair)
 
-    find_max_user(pair_list, n, min_login_time, max_logout_time)
+    find_max_loged_in_users(pair_list, n, min_login_time, max_logout_time)
 
 """
 3

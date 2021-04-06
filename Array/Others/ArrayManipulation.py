@@ -1,7 +1,9 @@
-# https://www.hackerrank.com/challenges/crush/problem
 """
+https://www.hackerrank.com/challenges/crush/problem
 Prerequisite to solve this problem : PrefixSum
 This is a variation of prefix-sum
+
+https://www.youtube.com/watch?v=JtJKn_c9lB4&ab_channel=alGOds
 """
 
 
