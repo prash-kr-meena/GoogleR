@@ -134,7 +134,7 @@ class BinaryTree:
             print()  # after window size is over
 
     @staticmethod
-    def display_aux(root_node):
+    def _display_aux(root_node):
         """
         Returns list of strings, width, height, and horizontal coordinate of the root.
         """
@@ -149,7 +149,7 @@ class BinaryTree:
 
         # Only left child.
         if root_node.right is None:
-            lines, n, p, x = BinaryTree.display_aux(root_node.left)
+            lines, n, p, x = BinaryTree._display_aux(root_node.left)
             s = '%s' % root_node.data
             u = len(s)
             first_line = (x + 1) * ' ' + (n - x - 1) * '_' + s
@@ -159,7 +159,7 @@ class BinaryTree:
 
         # Only right child.
         if root_node.left is None:
-            lines, n, p, x = BinaryTree.display_aux(root_node.right)
+            lines, n, p, x = BinaryTree._display_aux(root_node.right)
             s = '%s' % root_node.data
             u = len(s)
             first_line = s + x * '_' + (n - x) * ' '
@@ -168,8 +168,8 @@ class BinaryTree:
             return [first_line, second_line] + shifted_lines, n + u, p + 2, u // 2
 
         # Two children.
-        left, n, p, x = BinaryTree.display_aux(root_node.left)
-        right, m, q, y = BinaryTree.display_aux(root_node.right)
+        left, n, p, x = BinaryTree._display_aux(root_node.left)
+        right, m, q, y = BinaryTree._display_aux(root_node.right)
         s = '%s' % root_node.data
         u = len(s)
         first_line = (x + 1) * ' ' + (n - x - 1) * '_' + s + y * '_' + (m - y) * ' '
@@ -184,7 +184,7 @@ class BinaryTree:
 
     @staticmethod
     def display(root_node):
-        lines, *_ = BinaryTree.display_aux(root_node)
+        lines, *_ = BinaryTree._display_aux(root_node)
         for line in lines:
             print(line)
         print("`````````````````````")

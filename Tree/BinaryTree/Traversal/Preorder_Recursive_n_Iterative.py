@@ -8,13 +8,13 @@ My Github Changes : https://github.com/prash-kr-meena/DataStructures-Algorithms/
 """
 
 
-def do_preorder_traversal(root) -> None:
+def go_preorder(root) -> None:
     if root is None:
         return None
 
     print(root.data, end=" ")
-    do_preorder_traversal(root.left)
-    do_preorder_traversal(root.right)
+    go_preorder(root.left)
+    go_preorder(root.right)
 
 
 """
@@ -29,14 +29,14 @@ we initialize the state with 0, as starting
 """
 
 
-def do_preorder_traversal_iteratively(root_node):
-    stack = []  # using list as stack, ie, append(), pop(), stack[-1], len(stack)
-    stack.append((root_node, 0))  # pushing a pair of (node, its_state)
+# Using list as stack ie, append(), pop(), stack[-1], len(stack)
+def go_preorder_iteratively(root_node):
+    stack = [(root_node, 0)]  # Creating stack & Pushing a Pair of (node, its_state)
 
     while len(stack) != 0:
         curr_root, curr_root_state = stack.pop()
 
-        # notice : we have popped out the pair
+        # Notice : we have popped out the pair
         # so now we need to push its updated state, into the stack, But that we do only when
         # The state is less then 3 and its not a `None` Node
 
@@ -49,11 +49,9 @@ def do_preorder_traversal_iteratively(root_node):
         # Now we will be processing this node, <We have the data with us> so we need to push the updated status
         # There is a reason, We push it back to stack, before actually doing the operations on the basis os state
         # and that reason is basically, to get order right
-        # Also :
         stack.append((curr_root, curr_root_state + 1))
 
-        if curr_root_state == 0:
-            # process node : as preorder
+        if curr_root_state == 0:  # process node : as preorder
             print(curr_root.data, end=" ")
 
         elif curr_root_state == 1:  # go left : as preorder
@@ -64,18 +62,18 @@ def do_preorder_traversal_iteratively(root_node):
 
 
 if __name__ == '__main__':
-    tree_root = BinaryTree.single_line_input(input_array(""))
+    tree_input = input_array(prompt="")
+    tree_root = BinaryTree.single_line_input(tree_input)
     BinaryTree.display(tree_root)
-    do_preorder_traversal(tree_root)
+
+    go_preorder(tree_root)
     print()
-    do_preorder_traversal_iteratively(tree_root)
+    go_preorder_iteratively(tree_root)
 
 """
                         1
                     2      3
                   4   5      6
-                7      8   
-
+                7      8 
 1 2 3 4 5 -1 6 7 -1 -1 8 -1 -1 -1 -1 -1 -1  
-
 """

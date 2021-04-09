@@ -17,17 +17,28 @@ def do_postorder_traversal(root) -> None:
     print(root.data, end=" ")
 
 
+"""
+We have 3 states, for each of the node, We initialize the state with 0, as starting state
+
+  In case of Inorder they will be
+    0 = Going in Left direction
+    1 = Processing
+    2 = Going in Right direction
+    3 = Done All processing, we can safely pop it out
+"""
+
+
 def do_postorder_traversal_iteratively(root) -> None:
-    stack = []
-    stack.append((root, 0))
+    stack = [(root, 0)]  # Creating stack & Pushing a Pair of (node, its_state)
 
     while len(stack) != 0:
         curr_root, curr_root_state = stack.pop()
 
         if curr_root is None or curr_root_state == 3:
+            # curr_root is popped out of the stack, and not pushed
             continue
 
-        stack.append((curr_root, curr_root_state + 1))
+        stack.append((curr_root, curr_root_state + 1))  # pushed curr_root with updated state
 
         if curr_root_state == 0:
             stack.append((curr_root.left, 0))
@@ -38,7 +49,8 @@ def do_postorder_traversal_iteratively(root) -> None:
 
 
 if __name__ == '__main__':
-    tree_root = BinaryTree.single_line_input(input_array(""))
+    tree_input = input_array(prompt="")
+    tree_root = BinaryTree.single_line_input(tree_input)
     BinaryTree.display(tree_root)
     do_postorder_traversal(tree_root)
     print()
